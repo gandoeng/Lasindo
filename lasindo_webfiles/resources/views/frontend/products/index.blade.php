@@ -137,91 +137,34 @@
                                         </div>
                                     @endforeach
 
-                                    <div class=" to-be-filtered filter-{{Str::slug($bs->brandsec,'-')}}"  style="display: grid; grid-template-columns: auto auto auto; grid-template-rows: auto auto auto;"> 
+                                    <div class="row to-be-filtered filter-{{Str::slug($bs->brandsec,'-')}}"> 
                                         @foreach ($products->where('section',$bs->section)->where('brand',$bs->brandsec) as $p)
                                             @if ($p->layout=='full')
-                                            <div class="col-6">
+                                            <div class="col-md-4">
                                             @else
-                                            <div class="col-md-8">                                                
+                                            <div class="col-md-6">                                                
                                             @endif
                                                 <div class="the-products">
-                                                    <div >
-                                                        <div class="d-flex {{$p->layout=='sidebyside' ? 'image' : ''}}" style="width: 400px; height: 150px;">
-                                                            <img style="max-width: 100%; max-height: 100%; float: left; margin-left: 50%;" src="{{$p->image}}" class="m-auto" alt="{{$p->name}}">
-                                                        </div>
+                                                    <!--<h4>{{$p->name}}</h4>-->
+                                                    <div class="d-flex {{$p->layout=='sidebyside' ? 'image' : ''}}" style="width: 400px; height: 150px;" >
+                                                        <img src="{{$p->image}}" class="m-auto" alt="{{$p->name}}" style="max-width: 100%; max-height: 100%; float: left; margin-left: 100%;">
                                                     </div>
                                                     @if($p->fullName == null)
-                                                        <p style="margin-top: 7px; margin-bottom: 0; float: left; margin-left: 30%; font-size: 12pt; width: 500px; height: 20px;"><strong> {{$p->name}}</strong></p>
-                                                        </div>
-                                                            <form style="padding-top: 12px;">
-                                                                <button class="btn btn-sm btn-warning" type="button" style="float: left; margin-left: 50%;
-                                                            50%; width: 120px; height: 30px; margin-top: 7px; background-color: #FFA500; color: white;" data-toggle="modal" data-target="#edit-modal">Request Quote</button>
-                                                            </form>
-                                                            <div class="modal fade" id="edit-modal">
-                                                            <div class="modal-dialog">
-                                                                <div class="modal-content">
-                                                                    <div class="modal-header">
-                                                                        <h1 class="modal-title" align="center" style="color: #d3d3d3; font-size: 12pt;">REQUEST QUOTE</h1>
-                                                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                                                        <span aria-hidden="true">&times;</span>
-                                                                        </button>
-                                                                    </div>
-                                                                    <div class="col-sm-6">
-                                                                        <div class="" style="width: 470px; margin-top: 10px;" >
-                                                                            <form>
-                                                                            <div class="row">
-                                                                                <div class="form-group col-sm-6">
-                                                                                    <label for="firstName">First Name &#42;</label>
-                                                                                    <input class="form-control" id="firstName" name="firstName" type="text" required>
-                                                                                </div>
-                                                                                <div class="form-group col-sm-6">
-                                                                                    <label for="lastName">Last Name &#42;</label>
-                                                                                    <input class="form-control" id="lastName" name="lastName" type="text">
-                                                                                </div>
-                                                                                <div class="form-group col-sm-6">
-                                                                                    <label for="comapany">Company/Organization &#42;</label>
-                                                                                    <input class="form-control" id="company" name="company" type="text" required>
-                                                                                </div>
-                                                                                <div class="form-group col-sm-6">
-                                                                                    <label for="country">Country &#42;</label>
-                                                                                    <input class="form-control" id="country" name="country" type="text" required>
-                                                                                </div>
-                                                                                <div class="form-group col-sm-6">
-                                                                                    <label for="email">Email &#42;</label>
-                                                                                    <input class="form-control" id="email" name="email" type="email">
-                                                                                </div>
-                                                                                <div class="form-group col-sm-6">
-                                                                                    <label for="postal-code">Phone &#42;</label>
-                                                                                    <input class="form-control" id="phone" name="phone" type="text" required>
-                                                                                </div>
-                                                                            </div>
-                                                                            <div class="form-group">
-                                                                                <label for="country">Message/Inquiry &#42;</label>
-                                                                                <textarea class="form-control" id="message" name="message" cols="40" rows="5" type="text" style=" height: 100px;" required> </textarea>
-                                                                            </div>
-                                                                            <div class="form-group">
-                                                                                <button class="btn btn-sm btn-warning" type="submit" style="float: left;margin-left: 70%; width: 120px; height: 30px; background-color: #FFA500; color: white;">Submit</button>
-                                                                            </div>
-                                                                            <div class="form-group">
-                                                                                <label for="mandatory" style="font-size: 7pt; color: blue;"> &#42; <strong>mandatory</strong></label>
-                                                                            </div>
-                                                                        </div>
-                                                                    </form>
-                                                                    </div>
-                                                                <div class="modal-body">
-                                                            </div>
-                                                        </div>
-                                                        </div>
-                                                        </div>
-                                                        </div>
+
+                                                    <p style="margin-top: 7px; margin-bottom: 0; float: left;font-size: 12pt; width: 100%; font-size: 12pt; height: 20px; text-align: center;"><strong> {{$p->name}}</strong></p>
+
                                                     @else
-                                                         <h4 style="margin-top: 7px; margin-bottom: 0; float: left; margin-left: 100%; font-size: 12pt;"><strong> {{$p->abbreviation}}</strong></h4>
-                                                        <p style="font-size: 10pt; float: left; margin-left: 50%; width: 300px; height:30px;">{{$p->fullName}}</p>
-                                                        </div>
-                                                        <form style="padding-top: 7px;">
-                                                            <button class="btn btn-sm btn-warning" type="button" style="float: left;margin-left: 70%; width: 120px; height: 30px; background-color: #FFA500; color: white;" data-toggle="modal" data-target="#edit-modal">Request Quote</button>
-                                                        </form>
-                                                        <div class="modal fade" id="edit-modal">
+
+                                                    <h4 style="float: left; margin-left: 50%;">{{$p->abbreviation}}</h4>
+                                                    <p style=" margin-bottom: 0; float: left; margin-left: 0%; text-align: center; font-size: 12pt; width: 100%; font-size: 12pt; height: 20px;"><strong> {{$p->fullName}}</strong></p>
+
+                                                    @endif
+                                                </div>
+                                                    <form style="padding-top: 70px;">
+                                                        <button class="btn btn-sm btn-warning" type="button" style="float: left; margin-left: 37%;
+                                                            50%; width: 120px; height: 30px; background-color: #FFA500; color: white;" data-toggle="modal" data-target="#edit-modal">Request Quote</button>
+                                                    </form>
+                                                    <div class="modal fade" id="edit-modal">
                                                             <div class="modal-dialog">
                                                                 <div class="modal-content">
                                                                     <div class="modal-header">
@@ -232,7 +175,8 @@
                                                                     </div>
                                                                     <div class="col-sm-6">
                                                                         <div class="" style="width: 470px; margin-top: 10px;" >
-                                                                            <form>
+                                                                            <form action="{{ route('frontend.request-quote') }}" method="post" enctype="multipart/form-data">
+                                                                                @csrf
                                                                             <div class="row">
                                                                                 <div class="form-group col-sm-6">
                                                                                     <label for="firstName">First Name &#42;</label>
@@ -277,18 +221,12 @@
                                                         </div>
                                                         </div>
                                                         </div>
-                                                    </div>
-                                                    @endif
                                                     <!--
                                                     <div class="desc">
                                                         {!!$p->desc!!}
-                                                    </div> -->
-                                                    <!--
+                                                    </div>
+                                                -->
                                                 </div>
-                                                <form style="padding-top: 12px;">
-                                                    <button class="btn btn-sm btn-warning" type="button" style="float: left; margin-left: 70%; width: 120px; height: 30px;">Request Quote</button>
-                                                </form>
-                                            </div> -->
                                         @endforeach
                                     </div>
                                 @endif

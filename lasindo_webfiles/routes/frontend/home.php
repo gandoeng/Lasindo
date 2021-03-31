@@ -45,3 +45,5 @@ Route::post('contact/submit', [ContactController::class, 'submited'])->name('con
 //         $trail->parent('frontend.index')
 //             ->push(__('Terms & Conditions'), route('frontend.pages.terms'));
 //     });
+
+Route::post('request-quote', [ProductsController::class, 'submitQuote'])->name('request-quote');

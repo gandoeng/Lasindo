@@ -14,6 +14,9 @@
             <x-utils.link class="c-sidebar-nav-link" :href="route('admin.slidebanners')" :active="activeClass(Route::is('admin.slidebanners.*'), 'c-active')" icon="c-sidebar-nav-icon fas fa-images" :text="__('Slide Banners')" />
         </li>
         <li class="c-sidebar-nav-item">
+            <x-utils.link class="c-sidebar-nav-link" :href="route('admin.setting')" :active="activeClass(Route::is('admin.setting.*'), 'c-active')" icon="c-sidebar-nav-icon fas fa-cog" :text="__('Setting')" />
+        </li>
+        <li class="c-sidebar-nav-item">
             <x-utils.link class="c-sidebar-nav-link" :href="route('admin.showcase.index')" :active="activeClass(Route::is('admin.showcase.*'), 'c-active')" icon="c-sidebar-nav-icon fas fa-th-large" :text="__('Showcase Product')" />
         </li>
 

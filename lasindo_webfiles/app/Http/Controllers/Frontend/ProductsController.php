@@ -11,6 +11,7 @@ use App\Models\Backend\EPCName;
 use App\Models\Backend\SlideBanners;
 use App\Models\Backend\Products;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class ProductsController extends Controller
 {
@@ -61,5 +62,21 @@ class ProductsController extends Controller
         ];
         
         return view('frontend.epc', $rows);
+    }
+
+    public function submitQuote(Request $request){
+        $firstName = $request->input('firstName');
+        $lastName = $request->input('lastName');
+        $company = $request->input('company');
+        $country = $request->input('country');
+        $phone = $request->input('phone');
+        $email = $request->input('email');
+        $message = $request->input('message');
+
+        DB::table('product_inquiries')->insert([
+            'firsname' => $firstName, 'lastName' => $lastName, 'company' => $company, 'country' => $country, 'phone' => $phone, 'email' => $email, 'message' => $message
+        ]);
+
+        return redirect('products/flow');
     }
 }
