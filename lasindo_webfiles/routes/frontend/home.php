@@ -73,5 +73,22 @@ Route::group(['prefix' => 'CTC', 'as' => 'CTC.'], function () {
     Route::get('{CTC}', [ProductsController::class, 'CTC'])->name('CTC');
 });
 
+//Route MTC
+Route::group(['prefix' => 'MTC', 'as' => 'MTC.'], function () {    
+    Route::get('', function(){
+        return redirect()->route('frontend.MTC.MTC','temperature');
+    });   
+    Route::get('{MTC}', [ProductsController::class, 'MTC'])->name('MTC');
+});
+
+//Route ETC
+Route::group(['prefix' => 'ETC', 'as' => 'ETC.'], function () {    
+    Route::get('', function(){
+        return redirect()->route('frontend.ETC.ETC','temperature');
+    });   
+    Route::get('{ETC}', [ProductsController::class, 'ETC'])->name('ETC');
+});
+
+
 
 

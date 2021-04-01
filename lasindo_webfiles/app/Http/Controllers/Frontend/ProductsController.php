@@ -132,5 +132,42 @@ class ProductsController extends Controller
         return view('frontend.products.CTC', $rows);
     }
 
+    public function MTC(Request $request){
+        $footer     = AddSocmeds::get();
+        $brands     = Brands::get();
+        $brandsec   = BrandSec::get();
+        $products   = Products::get();
+        $slides     = SlideBanners::get();
+        $rows   = [
+            'footer'    => $footer,
+            'brands'    => $brands,
+            'brandsec'  => $brandsec,
+            'products'  => $products,
+            'slides'    => $slides,
+        ];
+        
+        return view('frontend.products.MTC', $rows);
+    }
+
+
+     public function ETC(Request $request){
+        $footer     = AddSocmeds::get();
+        $brands     = Brands::get();
+        $brandsec   = BrandSec::get();
+        $products   = Products::get();
+        $slides     = SlideBanners::get();
+        $rows   = [
+            'footer'    => $footer,
+            'brands'    => $brands,
+            'brandsec'  => $brandsec,
+            'products'  => $products,
+            'slides'    => $slides,
+        ];
+        
+        return view('frontend.products.ETC', $rows);
+    }
+
+
+
 
 }
