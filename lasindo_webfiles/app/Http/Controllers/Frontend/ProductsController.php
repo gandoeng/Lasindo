@@ -77,6 +77,7 @@ class ProductsController extends Controller
             'firsname' => $firstName, 'lastName' => $lastName, 'company' => $company, 'country' => $country, 'phone' => $phone, 'email' => $email, 'message' => $message
         ]);
 
+        toastr()->success('Request quote success.');
         return redirect('products/flow');
     }
 
@@ -96,4 +97,40 @@ class ProductsController extends Controller
         
         return view('frontend.products.RTC', $rows);
     }
+
+    public function PTC(Request $request){
+        $footer     = AddSocmeds::get();
+        $brands     = Brands::get();
+        $brandsec   = BrandSec::get();
+        $products   = Products::get();
+        $slides     = SlideBanners::get();
+        $rows   = [
+            'footer'    => $footer,
+            'brands'    => $brands,
+            'brandsec'  => $brandsec,
+            'products'  => $products,
+            'slides'    => $slides,
+        ];
+        
+        return view('frontend.products.PTC', $rows);
+    }
+
+    public function CTC(Request $request){
+        $footer     = AddSocmeds::get();
+        $brands     = Brands::get();
+        $brandsec   = BrandSec::get();
+        $products   = Products::get();
+        $slides     = SlideBanners::get();
+        $rows   = [
+            'footer'    => $footer,
+            'brands'    => $brands,
+            'brandsec'  => $brandsec,
+            'products'  => $products,
+            'slides'    => $slides,
+        ];
+        
+        return view('frontend.products.CTC', $rows);
+    }
+
+
 }

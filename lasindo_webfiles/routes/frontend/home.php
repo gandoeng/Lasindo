@@ -49,10 +49,29 @@ Route::post('contact/submit', [ContactController::class, 'submited'])->name('con
 Route::post('request-quote', [ProductsController::class, 'submitQuote'])->name('request-quote');
 
 //Route::get('RTC',[ProductsController::class,'RTC'])->name('RTC');
+//Route RTC
 Route::group(['prefix' => 'RTC', 'as' => 'RTC.'], function () {    
     Route::get('', function(){
         return redirect()->route('frontend.RTC.RTC','temperature');
     });   
     Route::get('{RTC}', [ProductsController::class, 'RTC'])->name('RTC');
 });
+
+//Route PTC
+Route::group(['prefix' => 'PTC', 'as' => 'PTC.'], function () {    
+    Route::get('', function(){
+        return redirect()->route('frontend.PTC.PTC','temperature');
+    });   
+    Route::get('{PTC}', [ProductsController::class, 'PTC'])->name('PTC');
+});
+
+//Route CTC
+Route::group(['prefix' => 'CTC', 'as' => 'CTC.'], function () {    
+    Route::get('', function(){
+        return redirect()->route('frontend.CTC.CTC','temperature');
+    });   
+    Route::get('{CTC}', [ProductsController::class, 'CTC'])->name('CTC');
+});
+
+
 

@@ -156,7 +156,14 @@
                                                     @else
 
                                                     <h4 style="float: left; margin-left: 50%;">{{$p->abbreviation}}</h4>
-                                                    <p style=" margin-bottom: 0; float: left; margin-left: 0%; text-align: center; font-size: 12pt; width: 100%; font-size: 12pt; height: 20px;"><strong> {{$p->fullName}}</strong></p>
+
+                                                    @if($p->abbreviation == 'RTC')
+                                                    <a href="{{route('frontend.RTC.RTC','temperature')}}" style=" margin-bottom: 0; float: left; margin-left: 0%; text-align: center; font-size: 12pt; width: 100%; font-size: 12pt; height: 20px; color: black;"><strong> {{$p->fullName}}</strong></a>
+                                                    @elseif($p->abbreviation == 'PTC')
+                                                    <a href="{{route('frontend.PTC.PTC','temperature')}}" style=" margin-bottom: 0; float: left; margin-left: 0%; text-align: center; font-size: 12pt; width: 100%; font-size: 12pt; height: 20px; color: black;"><strong> {{$p->fullName}}</strong></a>
+                                                    @else
+                                                    <a href="#" style=" margin-bottom: 0; float: left; margin-left: 0%; text-align: center; font-size: 12pt; width: 100%; font-size: 12pt; height: 20px; color: black;"><strong> {{$p->fullName}}</strong></a>
+                                                    @endif
 
                                                     @endif
                                                 </div>
@@ -187,7 +194,7 @@
                                                                                     <input class="form-control" id="lastName" name="lastName" type="text">
                                                                                 </div>
                                                                                 <div class="form-group col-sm-6">
-                                                                                    <label for="comapany">Company/Organization &#42;</label>
+                                                                                    <label for="company">Company/Organization &#42;</label>
                                                                                     <input class="form-control" id="company" name="company" type="text" required>
                                                                                 </div>
                                                                                 <div class="form-group col-sm-6">
