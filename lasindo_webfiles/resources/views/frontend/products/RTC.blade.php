@@ -101,11 +101,32 @@
                         <div class="cat-name">
                             <div class="catname">
                                 <h4>{{getSectionFullName()}} Measurement</h4>
+                            </div>
+                            <div class="ml-0 mr-0" style="margin-bottom: 5%;">
+                                <div class="row brands">
+                                    @php
+                                        $count = 0;
+                                        foreach ($brandsec as $brs) {
+                                            if (Str::slug($brs->section,'-')==getProductSection()) {
+                                                $count = $count+1;
+                                                foreach ($brands->where('name',$brs->brandsec) as $br) {
+                                    @endphp
+                                            <div class="col p-2 d-flex {{$count==1 ? 'active' : '' }}" >
+                                                <div class="align-self-center m-auto">
+                                                    <img src="{{$br->image}}" alt="{{$count.$brs->section}}-{{$brs->brandsec}}">
+                                                </div>
+                                            </div>
+                                    @php
+                                                }
+                                            }
+                                        }
+                                    @endphp
+                                </div>
                             </div>   
                             <div class="ml-0 mr-0">
                                 <div class="row brands">
                                     <div class="col p-2 d-flex cat-brand active nav"  data-filter=".filter-overview">
-                                        <div class="align-self-center m-auto" data-filter="#a" >
+                                        <div class="align-self-center m-auto"  >
                                             <h2>Overview</h2>
                                         </div>
                                     </div>
@@ -229,13 +250,13 @@
                                     <div class="form-group row">
                                         <table class="table table-responsive-sm table-bordered">
                                             <tbody>
-                                                <tr class="spacer" style="border: none;" valign="middle">
-                                                    <th style="background-color:  #fbb03b; " rowspan="13" valign="middle">RTC 156</th>
+                                                <tr class="spacer " style="border: none;" valign="middle">
+                                                    <th class="align-middle" style="background-color:  #fbb03b; " rowspan="13" valign="middle">RTC 156</th>
                                                     <th>Temperature range</th>
                                                     <td>-30 to 155°C / -22 to 311°F</td>
                                                 </tr>
                                                 <tr>
-                                                    <th rowspan="2" >Accuracy</th>
+                                                    <th rowspan="2" class="align-middle" >Accuracy</th>
                                                     <td>with external STS ref. sensor (model B & C): ± 0.04°C / ± 0.07°F</td>
                                                 </tr>
                                                 <tr>
@@ -250,14 +271,14 @@
                                                     <td>1° or 0.1° or 0.01° or 0.001˚</td>
                                                 </tr>
                                                 <tr>
-                                                    <th rowspan="2">Heating time</th>
+                                                    <th rowspan="2" class="align-middle">Heating time</th>
                                                     <td>30 to 23°C / -22 to 73°F. . . . . . . . . . . . . 4 minutes</td>
                                                 </tr>
                                                 <tr>
                                                     <td>23 to 155°C / 73 to 311°F . . . . . . . . . . . 15 minutes</td>
                                                 </tr>
                                                 <tr>
-                                                    <th rowspan="4">Cooling time</th>
+                                                    <th rowspan="4" class="align-middle">Cooling time</th>
                                                     <td>155 to 100°C / 311 to 212°F . . . . . . . . . . 4 minutes</td>
                                                 </tr>
                                                 <tr>
@@ -284,12 +305,12 @@
                                         <table class="table table-responsive-sm table-bordered">
                                             <tbody>
                                                 <tr class="spacer" style="border: none;" valign="middle">
-                                                    <th style="background-color:  #fbb03b; " rowspan="13" valign="middle">RTC 157</th>
+                                                    <th class="align-middle" style="background-color:  #fbb03b; " rowspan="13" valign="middle">RTC 157</th>
                                                     <th>Temperature range</th>
                                                     <td>-45 to 155°C / -49 to 311°F</td>
                                                 </tr>
                                                 <tr>
-                                                    <th rowspan="2" >Accuracy</th>
+                                                    <th rowspan="2" class="align-middle">Accuracy</th>
                                                     <td>with external STS ref. sensor (model B & C): ± 0.04°C / ± 0.07°F</td>
                                                 </tr>
                                                 <tr>
@@ -304,14 +325,14 @@
                                                     <td>1° or 0.1° or 0.01° or 0.001˚</td>
                                                 </tr>
                                                 <tr>
-                                                    <th rowspan="2">Heating time</th>
+                                                    <th rowspan="2" class="align-middle">Heating time</th>
                                                     <td>-45 to 23°C /-49 to 73°F . . . . . . . . . . . . . 7 minutes</td>
                                                 </tr>
                                                 <tr>
                                                     <td>23 to 155°C / 73 to 311°F. . . . . . . . . . . . 17 minutes</td>
                                                 </tr>
                                                 <tr>
-                                                    <th rowspan="4">Cooling time</th>
+                                                    <th rowspan="4" class="align-middle">Cooling time</th>
                                                     <td>155 to 100°C / 311 to 212°F. . . . . . . . . . . 5 minutes</td>
                                                 </tr>
                                                 <tr>
@@ -338,12 +359,12 @@
                                         <table class="table table-responsive-sm table-bordered">
                                             <tbody>
                                                 <tr class="spacer" style="border: none;" valign="middle">
-                                                    <th style="background-color:  #fbb03b; " rowspan="16" valign="middle">RTC 158</th>
+                                                    <th class="align-middle" style="background-color:  #fbb03b; " rowspan="16" valign="middle">RTC 158</th>
                                                     <th>Temperature range</th>
                                                     <td>-22 to 155°C/-8 to 311°F</td>
                                                 </tr>
                                                 <tr>
-                                                    <th rowspan="3" >Accuracy</th>
+                                                    <th rowspan="3" class="align-middle" >Accuracy</th>
                                                     <td>with external STS ref. sensor (model B & C): ± 0.04°C / ± 0.07°F</td>
                                                 </tr>
                                                 <tr>
@@ -361,7 +382,7 @@
                                                     <td>1° or 0.1° or 0.01° or 0.001˚</td>
                                                 </tr>
                                                 <tr>
-                                                    <th rowspan="3">Heating time</th>
+                                                    <th rowspan="3" class="align-middle">Heating time</th>
                                                     <td>-22 to 23°C /-8 to 73°F. . . . . . . . . . . . . . . 9 minutes</td>
                                                 </tr>
                                                 <tr>
@@ -371,7 +392,7 @@
                                                     <td>100 to 155°C / 212 to 311°F. . . . . . . . . . 28 minutes</td>
                                                 </tr>
                                                 <tr>
-                                                    <th rowspan="4">Cooling time</th>
+                                                    <th rowspan="4" class="align-middle">Cooling time</th>
                                                     <td>155 to 100°C / 311 to 212°F. . . . . . . . . . . 9 minutes</td>
                                                 </tr>
                                                 <tr>
@@ -388,7 +409,7 @@
                                                     <td>15 minutes</td>
                                                 </tr>
                                                 <tr>
-                                                    <th rowspan="2">Immersion depth</th>
+                                                    <th rowspan="2" class="align-middle">Immersion depth</th>
                                                     <td>Insert Hole version : 180 mm / 7.1 in</td>
                                                 </tr>
                                                 <tr>
@@ -401,12 +422,12 @@
                                         <table class="table table-responsive-sm table-bordered">
                                             <tbody>
                                                 <tr class="spacer" style="border: none;" valign="middle">
-                                                    <th style="background-color:  #fbb03b; " rowspan="14" valign="middle">RTC 159</th>
+                                                    <th class="align-middle" style="background-color:  #fbb03b; " rowspan="14" valign="middle">RTC 159</th>
                                                     <th>Temperature range</th>
                                                     <td>-100 to 155°C / -148 to 311°F</td>
                                                 </tr>
                                                 <tr>
-                                                    <th rowspan="2" >Accuracy</th>
+                                                    <th rowspan="2" class="align-middle" >Accuracy</th>
                                                     <td>with external STS ref. sensor (model B & C) :  ± 0.06°C / ± 0.11°F</td>
                                                 </tr>
                                                 <tr>
@@ -421,14 +442,14 @@
                                                     <td>1° or 0.1° or 0.01° or 0.001˚</td>
                                                 </tr>
                                                 <tr>
-                                                    <th rowspan="2">Heating time</th>
+                                                    <th rowspan="2" class="align-middle">Heating time</th>
                                                     <td>-100 to 23°C / -148 to 73°F. . . . . . . . . . . . . . 12 minutes</td>
                                                 </tr>
                                                 <tr>
                                                     <td>23 to 155°C / 73 to 311°F. . . . . . . . . . . . . . . 14 minutes</td>
                                                 </tr>
                                                 <tr>
-                                                    <th rowspan="4">Cooling time</th>
+                                                    <th rowspan="4" class="align-middle">Cooling time</th>
                                                     <td>155 to 23°C / 311 to 73°F. . . . . . . . . . . . . . . 40 minutes</td>
                                                 </tr>
                                                 <tr>
@@ -455,12 +476,12 @@
                                         <table class="table table-responsive-sm table-bordered">
                                             <tbody>
                                                 <tr class="spacer" style="border: none;" valign="middle">
-                                                    <th style="background-color:  #fbb03b; " rowspan="15" valign="middle">RTC 250</th>
+                                                    <th class="align-middle" style="background-color:  #fbb03b; " rowspan="15" valign="middle">RTC 250</th>
                                                     <th>Temperature range</th>
                                                     <td>28 to 250°C/82 to 482°F</td>
                                                 </tr>
                                                 <tr>
-                                                    <th rowspan="3" >Accuracy</th>
+                                                    <th rowspan="3" class="align-middle">Accuracy</th>
                                                     <td>with external STS ref. sensor (model B & C) : ± 0.07°C / ± 0.13°F</td>
                                                 </tr>
                                                 <tr>
@@ -478,7 +499,7 @@
                                                     <td>1° or 0.1° or 0.01° or 0.001˚</td>
                                                 </tr>
                                                 <tr>
-                                                    <th rowspan="3">Heating time</th>
+                                                    <th rowspan="3" class="align-middle">Heating time</th>
                                                     <td>28 to 100°C / 82 to 212°F. . . . . . . . . . . . 3 minutes</td>
                                                 </tr>
                                                 <tr>
@@ -488,7 +509,7 @@
                                                     <td>100 to 250°C / 212 to 482°F. . . . . . . . . . 9 minutes</td>
                                                 </tr>
                                                 <tr>
-                                                    <th rowspan="3">Cooling time</th>
+                                                    <th rowspan="3" class="align-middle">Cooling time</th>
                                                     <td>250 to 100°C / 482 to 212°F. . . . . . . . . . 27 minutes</td>
                                                 </tr>
                                                 <tr>
@@ -502,7 +523,7 @@
                                                     <td>15 minutes</td>
                                                 </tr>
                                                 <tr>
-                                                    <th rowspan="2">Immersion depth</th>
+                                                    <th rowspan="2" class="align-middle">Immersion depth</th>
                                                     <td>Insert Hole version : 180 mm / 7.1 in</td>
                                                 </tr>
                                                 <tr>
@@ -515,12 +536,12 @@
                                         <table class="table table-responsive-sm table-bordered">
                                             <tbody>
                                                 <tr class="spacer" style="border: none;" valign="middle">
-                                                    <th style="background-color:  #fbb03b; " rowspan="15" valign="middle">RTC 187</th>
+                                                    <th class="align-middle" style="background-color:  #fbb03b; " rowspan="15" valign="middle">RTC 187</th>
                                                     <th>Temperature range</th>
                                                     <td>-45 to 180° C/-49 to 356° F</td>
                                                 </tr>
                                                 <tr>
-                                                    <th rowspan="2" >Accuracy</th>
+                                                    <th rowspan="2" class="align-middle" >Accuracy</th>
                                                     <td>with external STS ref. sensor (model B & C) :  ± 0.04° C / ± 0.07° F</td>
                                                 </tr>
                                                 <tr>
@@ -535,7 +556,7 @@
                                                     <td>1° or 0.1° or 0.01° or 0.001˚</td>
                                                 </tr>
                                                 <tr>
-                                                    <th rowspan="3">Heating time</th>
+                                                    <th rowspan="3" class="align-middle">Heating time</th>
                                                     <td>-45 to 23° C /-49 to 73 °F . . . . . . . . . . . . . . . 7 minutes</td>
                                                 </tr>
                                                 <tr>
@@ -545,7 +566,7 @@
                                                     <td>100 to 180° C / 212 to 356° F. . . . . . . . . . . . 9 minutes</td>
                                                 </tr>
                                                 <tr>
-                                                    <th rowspan="4">Cooling time</th>
+                                                    <th rowspan="4" class="align-middle">Cooling time</th>
                                                     <td>180 to 100 °C / 311 to 212° F  . . . . . . . . . . . 8 minutes</td>
                                                 </tr>
                                                 <tr>
@@ -572,19 +593,19 @@
                                         <table class="table table-responsive-sm table-bordered">
                                             <tbody>
                                                 <tr class="spacer" style="border: none;" valign="middle">
-                                                    <th style="background-color:  #fbb03b; " rowspan="15" valign="middle"></th>
+                                                    <th class="align-middle" style="background-color:  #fbb03b; width: 11%; " rowspan="15" valign="middle"></th>
                                                     <th>Temperature range</th>
                                                     <td>33 to 700°C/91 to 1292°F</td>
                                                 </tr>
                                                 <tr>
-                                                    <th rowspan="2" >Accuracy</th>
+                                                    <th rowspan="2" class="align-middle" >Accuracy</th>
                                                     <td>with external STS ref. sensor (model B & C): ± 0.11°C / ± 0.2°F</td>
                                                 </tr>
                                                 <tr>
                                                     <td>with internal reference sensor: ± 0.29°C / ± 0.52°F</td>
                                                 </tr>
                                                 <tr>
-                                                    <th rowspan="3">Stability</th>
+                                                    <th rowspan="3" class="align-middle">Stability</th>
                                                     <td>@ 33 to 125ºC/91 to 257ºF : ±0.008°C/±0.015°F</td>
                                                 </tr>
                                                 <tr>
@@ -602,7 +623,7 @@
                                                     <td>33 to 700°C / 91 to 1292°F . . . . . . . . . . . . . 45 minutes</td>
                                                 </tr>
                                                 <tr>
-                                                    <th rowspan="3">Cooling time</th>
+                                                    <th rowspan="3" class="align-middle">Cooling time</th>
                                                     <td>700 to 100°C / 1292 to 212°F . . . . . . . . . . . 43 minutes</td>
                                                 </tr>
                                                 <tr>
@@ -623,11 +644,76 @@
                                         </table>
                                     </div>
                                 </div>
-                            <div class="brand-name filter-download">
-                                <h2>Download</h2>
                             </div>
-                            <div class="brand-name filter-video">
-                                <h2>Video</h2>
+                            <div class="brand-name filter-download">
+                                <div class="col-lg-12" style="margin-left: 15%;">
+                                    
+                                    <div class="form-group row" style="margin-bottom: 0%;">
+                                        <button class="btn btn-lg btn-warning" style="background-color: #fbb03b; color: white; padding-right: 700px;"  type="button"><i class="fas fa-caret-down" style="font-size: 25px;"></i>  Brochur</button>
+                                    </div>
+                                    <div class="form-group row">
+                                        <ul style="list-style-type:none; margin-top: 2%;">
+                                            <li><a href="{{ asset('storage/files/Ametek_Calibration_Overview_Brochure.pdf')}}" style="font-size: 15pt; color: black;" download><i class="far fa-file-alt"></i> Temperatur Calibrator Overview</li>
+                                            <li><a href="{{ asset('storage/files/Temperature_Calibrator_Overview.pdf')}}" style="font-size: 15pt; color: black;" download><i class="far fa-file-alt"></i> Ametek Calibrator Overview Brochure</li>
+                                        </ul> 
+                                    </div>
+
+                                    <div class="form-group row" style="margin-bottom: 0%">
+                                        <button class="btn btn-lg btn-warning" style="background-color: #fbb03b; color: white; padding-right: 700px;"  type="button"><i class="fas fa-caret-down" style="font-size: 25px;"></i>  Datasheet</button>
+                                    </div>
+                                    <div class="form-group row">
+                                        <ul style="list-style-type:none; margin-top: 2%;">
+                                            <li><a href="#" style="font-size: 15pt; color: black;"><i class="far fa-file-alt"></i>  RTC 700 Datasheet</a></li>
+                                            <li><a href="#" style="font-size: 15pt; color: black;"><i class="far fa-file-alt"></i>  RTC 156/157 Datasheet</a></li>
+                                            <li><a href="#" style="font-size: 15pt; color: black;"><i class="far fa-file-alt"></i>  RTC 158/250 Datasheet</a></li>
+                                            <li><a href="#" style="font-size: 15pt; color: black;"><i class="far fa-file-alt"></i>  RTC 159 Datasheet</a></li>
+                                            <li><a href="#" style="font-size: 15pt; color: black;"><i class="far fa-file-alt"></i>  RTC 187 Datasheet</a></li>
+                                            <li><a href="#" style="font-size: 15pt; color: black;"><i class="far fa-file-alt"></i>  RTC 700 Datasheet</a></li>
+                                            <li><a href="#" style="font-size: 15pt; color: black;"><i class="far fa-file-alt"></i>  DLC Datasheet</a></li>                                        </ul> 
+                                    </div>
+
+                                    <div class="form-group row" style="margin-bottom: 0%">
+                                        <button class="btn btn-lg btn-warning" style="background-color: #fbb03b; color: white; padding-right: 700px;"  type="button"><i class="fas fa-caret-down" style="font-size: 25px;"></i>  Manual</button>
+                                    </div>
+                                    <div class="form-group row">
+                                        <ul style="list-style-type:none; margin-top: 2%;">
+                                            <li><a href="#" style="font-size: 15pt; color: black;"><i class="far fa-file-alt"></i>  RTC User Manual</a></li>
+                                            <li><a href="#" style="font-size: 15pt; color: black;"><i class="far fa-file-alt"></i>  RTC Reference Manual</a></li>
+                                            <li><a href="#" style="font-size: 15pt; color: black;"><i class="far fa-file-alt"></i>  JofraCal User Manual Temperature</a></li>
+                                            <li><a href="#" style="font-size: 15pt; color: black;"><i class="far fa-file-alt"></i>  DLC User Manual</a></li>
+                                            <li><a href="#" style="font-size: 15pt; color: black;"><i class="far fa-file-alt"></i>  Ametrim User Manual</a></li>
+                                        </ul> 
+                                    </div>
+
+                                </div>
+                            </div>
+                            <div class="row to-be-filtered filter-video" style="margin-top: 5%; margin-left: 9%">
+                                <div class="col-lg-6">
+                                    <div class="form-group row">
+                                        <iframe width="420" height="315" src="https://www.youtube.com/embed/1m_hnKLoNs8"></iframe>
+                                    </div>
+                                </div>
+                                <div class="col-lg-6">
+                                    <div class="form-group row">
+                                        <iframe width="420" height="315"
+                                                src="https://www.youtube.com/embed/GG4iDoRqiRU" frameborder="0" allowfullscreen>
+                                        </iframe>                                    
+                                    </div>
+                                </div>
+                                <div class="col-lg-6">
+                                    <div class="form-group row">
+                                        <iframe width="420" height="315"
+                                                src="https://www.youtube.com/embed/0pTlN-10ULE" frameborder="0" allowfullscreen>
+                                        </iframe>                                    
+                                    </div>
+                                </div>
+                                <div class="col-lg-6">
+                                    <div class="form-group row">
+                                        <iframe width="420" height="315"
+                                                src="https://www.youtube.com/embed/x7gyu4l9GUo" frameborder="0" allowfullscreen>
+                                        </iframe>                                    
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
