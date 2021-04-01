@@ -3,9 +3,10 @@
 namespace App\Http\Controllers\Backend;
 
 use App\Http\Controllers\Controller;
-use DB;
 use Illuminate\Http\Request;
-
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Input;
+use Illuminate\Support\Facades\Response;
 
 /**
  * Class DashboardController.
@@ -35,6 +36,7 @@ class DashboardController extends Controller
     public function unsetEmail($id){
         $status = "unset";
         DB::table('email_reciver')->where('id','=',$id)->update(array('statusEmail' => $status));
+
 
         return $id; //redirect('backoffice/setting');
     }

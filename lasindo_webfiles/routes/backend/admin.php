@@ -174,8 +174,12 @@ Route::get('fileman', [FMController::class, 'index'])->name('fm')
 });
 
 //setting
-Route::get('setting', [DashboardController::class, 'setting'])->name('setting');
+//Route::get('setting', [DashboardController::class, 'setting'])->name('setting');
+Route::get('setting', [DashboardController::class, 'setting'])->name('setting')
+    ->breadcrumbs(function (Trail $trail) {
+    $trail->push(__('Setting'), route('admin.setting'));
+});
 //Route::get('setEmail/{$id}', 'DashboardController@setEmail');
 //Route::get('unsetEmail/{$id}', 'DashboardController@unsetEmail');
-Route::post('setEmail/{$id}',  [DashboardController::class, 'setEmail'])->name('setEmail');
-Route::post('unsetEmail/{$id}',  [DashboardController::class, 'unsetEmail'])->name('unsetEmail');
+Route::post('/setEmail/{$id}',  [DashboardController::class, 'setEmail'])->name('setting.setEmail');
+Route::post('setting/unsetEmail/{$id}',  [DashboardController::class, 'unsetEmail'])->name('setting.unsetEmail');

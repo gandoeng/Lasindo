@@ -47,3 +47,12 @@ Route::post('contact/submit', [ContactController::class, 'submited'])->name('con
 //     });
 
 Route::post('request-quote', [ProductsController::class, 'submitQuote'])->name('request-quote');
+
+//Route::get('RTC',[ProductsController::class,'RTC'])->name('RTC');
+Route::group(['prefix' => 'RTC', 'as' => 'RTC.'], function () {    
+    Route::get('', function(){
+        return redirect()->route('frontend.RTC.RTC','temperature');
+    });   
+    Route::get('{RTC}', [ProductsController::class, 'RTC'])->name('RTC');
+});
+

@@ -79,4 +79,21 @@ class ProductsController extends Controller
 
         return redirect('products/flow');
     }
+
+    public function RTC(Request $request){
+        $footer     = AddSocmeds::get();
+        $brands     = Brands::get();
+        $brandsec   = BrandSec::get();
+        $products   = Products::get();
+        $slides     = SlideBanners::get();
+        $rows   = [
+            'footer'    => $footer,
+            'brands'    => $brands,
+            'brandsec'  => $brandsec,
+            'products'  => $products,
+            'slides'    => $slides,
+        ];
+        
+        return view('frontend.products.RTC', $rows);
+    }
 }
