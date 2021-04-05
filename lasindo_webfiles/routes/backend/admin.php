@@ -9,6 +9,9 @@ use App\Http\Controllers\Backend\FMController;
 use App\Http\Controllers\Backend\ProductBrandsController;
 use App\Http\Controllers\Backend\ShowcaseController;
 use App\Http\Controllers\Backend\SlideBannersController;
+use App\Http\Controllers\Backend\NewsController;
+use App\Http\Controllers\Backend\SettingController;
+
 use Tabuna\Breadcrumbs\Trail;
 
 // All route names are prefixed with 'admin.'.
@@ -179,7 +182,38 @@ Route::get('setting', [DashboardController::class, 'setting'])->name('setting')
     ->breadcrumbs(function (Trail $trail) {
     $trail->push(__('Setting'), route('admin.setting'));
 });
-//Route::get('setEmail/{$id}', 'DashboardController@setEmail');
-//Route::get('unsetEmail/{$id}', 'DashboardController@unsetEmail');
-Route::post('/setEmail/{$id}',  [DashboardController::class, 'setEmail'])->name('setting.setEmail');
-Route::post('setting/unsetEmail/{$id}',  [DashboardController::class, 'unsetEmail'])->name('setting.unsetEmail');
+
+Route::post('/setEmail/{$id}', [SettingController::class, 'setEmail'])->name('setEmail')
+    ->breadcrumbs(function (Trail $trail) {
+    $trail->push(__('Set Email'), route('admin.setEmail'));
+});
+
+//Route::post('/unset-email/{$id}',  [DashboardController::class, 'unsetEmail'])->name('setting.unset-email');
+Route::post('/unsetEmail/{$id}', [SettingController::class, 'unsetEmail'])->name('unsetEmail')
+    ->breadcrumbs(function (Trail $trail) {
+    $trail->push(__('Unset Email'), route('admin.unsetEmail'));
+});
+
+//News
+Route::get('news', [NewsController::class, 'index'])->name('news')
+    ->breadcrumbs(function (Trail $trail) {
+    $trail->push(__('News'), route('admin.news'));
+});
+
+Route::get('/createNews', [NewsController::class, 'newsCreate'])->name('createNews')
+    ->breadcrumbs(function (Trail $trail) {
+    $trail->push(__('Create News'), route('admin.createNews'));
+});
+
+Route::post('/createNewsSubmit',[NewsController::class, 'createNewsSubmit'])->name('createNewsSubmit');
+
+Route::get('/updateNews', [NewsController::class, 'newsUpdate'])->name('updateNews')
+    ->breadcrumbs(function (Trail $trail) {
+    $trail->push(__('Update News'), route('admin.updateNews'));
+});
+
+//delete news
+Route::post('/deleteNews/{id}',[NewsController::class,'deleteNews'])->name('news.deleteNews');
+
+//Route::get('/create-news', [NewsController::class,'newsCreate'])->name('newsCreate');
+

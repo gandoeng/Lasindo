@@ -253,44 +253,35 @@
                                         <table class="table table-responsive-sm table-bordered">
                                             <tbody>
                                                 <tr class="spacer " style="border: none;" valign="middle">
-                                                    <th class="align-middle" style="background-color:  #fbb03b; " rowspan="13" valign="middle">RTC 156</th>
+                                                    <th class="align-middle" style="background-color:  #fbb03b; " rowspan="10" valign="middle">CTC 155</th>
                                                     <th>Temperature range</th>
-                                                    <td>-30 to 155°C / -22 to 311°F</td>
+                                                    <td>-25 to 155°C / -13 to 311°F</td>
                                                 </tr>
                                                 <tr>
                                                     <th rowspan="2" class="align-middle" >Accuracy</th>
-                                                    <td>with external STS ref. sensor (model B & C): ± 0.04°C / ± 0.07°F</td>
+                                                    <td>with external STS ref. sensor (model C): ± 0.2°C / ± 0.36°F</td>
                                                 </tr>
                                                 <tr>
-                                                    <td>with internal reference sensor: ± 0.10°C / ± 0.18°F</td>
+                                                    <td>with internal reference sensor: ± 0.3°C / ± 0.54°F</td>
                                                 </tr>
                                                 <tr>
                                                     <th>Stability</th>
-                                                    <td>± 0.005°C / ± 0.009°F</td>
+                                                    <td>± 0.04°C / ± 0.07°F</td>
                                                 </tr>
                                                 <tr>
                                                     <th>Resolution (user-selectable)</th>
                                                     <td>1° or 0.1° or 0.01° or 0.001˚</td>
                                                 </tr>
                                                 <tr>
-                                                    <th rowspan="2" class="align-middle">Heating time</th>
-                                                    <td>30 to 23°C / -22 to 73°F. . . . . . . . . . . . . 4 minutes</td>
+                                                    <th class="align-middle">Heating time</th>
+                                                    <td>23 to 155°C / 73 to 311°F. . . . . . . . . . . . . 13 minutes</td>
                                                 </tr>
                                                 <tr>
-                                                    <td>23 to 155°C / 73 to 311°F . . . . . . . . . . . 15 minutes</td>
+                                                    <th rowspan="2" class="align-middle">Cooling time</th>
+                                                    <td>155 to 23°C / 311 to 73°F. . . . . . . . . . . . . 12 minutes</td>
                                                 </tr>
                                                 <tr>
-                                                    <th rowspan="4" class="align-middle">Cooling time</th>
-                                                    <td>155 to 100°C / 311 to 212°F . . . . . . . . . . 4 minutes</td>
-                                                </tr>
-                                                <tr>
-                                                    <td>100 to 23°C / 212 to 73°F . . . . . . . . . . . . 8 minutes</td>
-                                                </tr>
-                                                <tr>
-                                                    <td>23 to -24°C / 73 to -11°F . . . . . . . . . . . . 15 minutes</td>
-                                                </tr>
-                                                <tr>
-                                                    <td>-24 to -30°C / -11 to -22°F . . . . . . . . . . . 10 minutes</td>
+                                                    <td>23 to -25°C / 73 to -13°F. . . . . . . . . . . . . . 16 minutes</td>
                                                 </tr>
                                                 <tr>
                                                     <th>Time to Stability</th>
@@ -298,7 +289,7 @@
                                                 </tr>
                                                 <tr>
                                                     <th>Immersion depth</th>
-                                                    <td>160 mm / 6.3 in</td>
+                                                    <td>120 mm / 4.53 in</td>
                                                 </tr>
                                             </tbody>
                                         </table>
@@ -307,340 +298,178 @@
                                         <table class="table table-responsive-sm table-bordered">
                                             <tbody>
                                                 <tr class="spacer" style="border: none;" valign="middle">
-                                                    <th class="align-middle" style="background-color:  #fbb03b; " rowspan="13" valign="middle">RTC 157</th>
+                                                    <th class="align-middle" style="background-color:  #fbb03b; " rowspan="11" valign="middle">CTC 350</th>
                                                     <th>Temperature range</th>
-                                                    <td>-45 to 155°C / -49 to 311°F</td>
-                                                </tr>
-                                                <tr>
-                                                    <th rowspan="2" class="align-middle">Accuracy</th>
-                                                    <td>with external STS ref. sensor (model B & C): ± 0.04°C / ± 0.07°F</td>
-                                                </tr>
-                                                <tr>
-                                                    <td>with internal reference sensor: ± 0.10°C / ± 0.18°F</td>
-                                                </tr>
-                                                <tr>
-                                                    <th>Stability</th>
-                                                    <td>± 0.005°C / ± 0.009°F</td>
-                                                </tr>
-                                                <tr>
-                                                    <th>Resolution (user-selectable)</th>
-                                                    <td>1° or 0.1° or 0.01° or 0.001˚</td>
-                                                </tr>
-                                                <tr>
-                                                    <th rowspan="2" class="align-middle">Heating time</th>
-                                                    <td>-45 to 23°C /-49 to 73°F . . . . . . . . . . . . . 7 minutes</td>
-                                                </tr>
-                                                <tr>
-                                                    <td>23 to 155°C / 73 to 311°F. . . . . . . . . . . . 17 minutes</td>
-                                                </tr>
-                                                <tr>
-                                                    <th rowspan="4" class="align-middle">Cooling time</th>
-                                                    <td>155 to 100°C / 311 to 212°F. . . . . . . . . . . 5 minutes</td>
-                                                </tr>
-                                                <tr>
-                                                    <td>100 to 23°C / 212 to 73°F. . . . . . . . . . . . 10 minutes</td>
-                                                </tr>
-                                                <tr>
-                                                    <td>23 to -30°C / 73 to -22°F. . . . . . . . . . . . . 17 minutes</td>
-                                                </tr>
-                                                <tr>
-                                                    <td>-30 to -45°C / -22 to -49°F. . . . . . . . . . . . 25 minutes</td>
-                                                </tr>
-                                                <tr>
-                                                    <th>Time to Stability</th>
-                                                    <td>10 minutes</td>
-                                                </tr>
-                                                <tr>
-                                                    <th>Immersion depth</th>
-                                                    <td>160 mm / 6.3 in</td>
-                                                </tr>
-                                            </tbody>
-                                        </table>
-                                    </div>
-                                    <div class="form-group row">
-                                        <table class="table table-responsive-sm table-bordered">
-                                            <tbody>
-                                                <tr class="spacer" style="border: none;" valign="middle">
-                                                    <th class="align-middle" style="background-color:  #fbb03b; " rowspan="16" valign="middle">RTC 158</th>
-                                                    <th>Temperature range</th>
-                                                    <td>-22 to 155°C/-8 to 311°F</td>
-                                                </tr>
-                                                <tr>
-                                                    <th rowspan="3" class="align-middle" >Accuracy</th>
-                                                    <td>with external STS ref. sensor (model B & C): ± 0.04°C / ± 0.07°F</td>
-                                                </tr>
-                                                <tr>
-                                                    <td>with internal reference sensor: ± 0.18°C / ± 0.32°F (in insert)</td>
-                                                </tr>
-                                                <tr>
-                                                    <td>with internal reference sensor: ± 0.3°C / ± 0.54°F (in bath)</td>
-                                                </tr>
-                                                <tr>
-                                                    <th>Stability</th>
-                                                    <td>±0.01°C / ±0.018°F</td>
-                                                </tr>
-                                                <tr>
-                                                    <th>Resolution (user-selectable)</th>
-                                                    <td>1° or 0.1° or 0.01° or 0.001˚</td>
-                                                </tr>
-                                                <tr>
-                                                    <th rowspan="3" class="align-middle">Heating time</th>
-                                                    <td>-22 to 23°C /-8 to 73°F. . . . . . . . . . . . . . . 9 minutes</td>
-                                                </tr>
-                                                <tr>
-                                                    <td>23 to 100°C / 73 to 212°F. . . . . . . . . . . . 23 minutes</td>
-                                                </tr>
-                                                <tr>
-                                                    <td>100 to 155°C / 212 to 311°F. . . . . . . . . . 28 minutes</td>
-                                                </tr>
-                                                <tr>
-                                                    <th rowspan="4" class="align-middle">Cooling time</th>
-                                                    <td>155 to 100°C / 311 to 212°F. . . . . . . . . . . 9 minutes</td>
-                                                </tr>
-                                                <tr>
-                                                    <td>100 to 23°C / 212 to 73°F. . . . . . . . . . . . 24 minutes</td>
-                                                </tr>
-                                                <tr>
-                                                    <td>23 to 0°C / 73 to 32°F. . . . . . . . . . . . . . . 15 minutes</td>
-                                                </tr>
-                                                <tr>
-                                                    <td>0 to -15°C / 32 to 5°F. . . . . . . . . . . . . . . 21 minutes</td>
-                                                </tr>
-                                                <tr>
-                                                    <th>Time to Stability</th>
-                                                    <td>15 minutes</td>
-                                                </tr>
-                                                <tr>
-                                                    <th rowspan="2" class="align-middle">Immersion depth</th>
-                                                    <td>Insert Hole version : 180 mm / 7.1 in</td>
-                                                </tr>
-                                                <tr>
-                                                    <td>Insert Hole version : 180 mm / 7.1 in</td>
-                                                </tr>
-                                            </tbody>
-                                        </table>
-                                    </div>
-                                    <div class="form-group row">
-                                        <table class="table table-responsive-sm table-bordered">
-                                            <tbody>
-                                                <tr class="spacer" style="border: none;" valign="middle">
-                                                    <th class="align-middle" style="background-color:  #fbb03b; " rowspan="14" valign="middle">RTC 159</th>
-                                                    <th>Temperature range</th>
-                                                    <td>-100 to 155°C / -148 to 311°F</td>
-                                                </tr>
-                                                <tr>
-                                                    <th rowspan="2" class="align-middle" >Accuracy</th>
-                                                    <td>with external STS ref. sensor (model B & C) :  ± 0.06°C / ± 0.11°F</td>
-                                                </tr>
-                                                <tr>
-                                                    <td>with internal reference sensor: ± 0.30°C / ± 0.54°F</td>
-                                                </tr>
-                                                <tr>
-                                                    <th>Stability</th>
-                                                    <td>± 0.03°C / ± 0.054°F</td>
-                                                </tr>
-                                                <tr>
-                                                    <th>Resolution (user-selectable)</th>
-                                                    <td>1° or 0.1° or 0.01° or 0.001˚</td>
-                                                </tr>
-                                                <tr>
-                                                    <th rowspan="2" class="align-middle">Heating time</th>
-                                                    <td>-100 to 23°C / -148 to 73°F. . . . . . . . . . . . . . 12 minutes</td>
-                                                </tr>
-                                                <tr>
-                                                    <td>23 to 155°C / 73 to 311°F. . . . . . . . . . . . . . . 14 minutes</td>
-                                                </tr>
-                                                <tr>
-                                                    <th rowspan="4" class="align-middle">Cooling time</th>
-                                                    <td>155 to 23°C / 311 to 73°F. . . . . . . . . . . . . . . 40 minutes</td>
-                                                </tr>
-                                                <tr>
-                                                    <td>23 to -80°C / 73 to -112°F. . . . . . . . . . . . . . . 65 minutes</td>
-                                                </tr>
-                                                <tr>
-                                                    <td>-80 to -90°C / -176 to -130°F. . . . . . . . . . . . . 20 minutes</td>
-                                                </tr>
-                                                <tr>
-                                                    <td>-90 to -100°C / -194 to -148°F. . . . . . . . . . . . 50 minutes</td>
-                                                </tr>
-                                                <tr>
-                                                    <th>Time to Stability</th>
-                                                    <td>10 minutes</td>
-                                                </tr>
-                                                <tr>
-                                                    <th>Immersion depth</th>
-                                                    <td>190 mm/6.3 in</td>
-                                                </tr>
-                                            </tbody>
-                                        </table>
-                                    </div>
-                                    <div class="form-group row">
-                                        <table class="table table-responsive-sm table-bordered">
-                                            <tbody>
-                                                <tr class="spacer" style="border: none;" valign="middle">
-                                                    <th class="align-middle" style="background-color:  #fbb03b; " rowspan="15" valign="middle">RTC 250</th>
-                                                    <th>Temperature range</th>
-                                                    <td>28 to 250°C/82 to 482°F</td>
+                                                    <td>28 to 350°C / 82 to 662°F</td>
                                                 </tr>
                                                 <tr>
                                                     <th rowspan="3" class="align-middle">Accuracy</th>
-                                                    <td>with external STS ref. sensor (model B & C) : ± 0.07°C / ± 0.13°F</td>
+                                                    <td>with external STS ref. sensor (model C): ± 0.25°C / ± 0.45°F</td>
                                                 </tr>
                                                 <tr>
-                                                    <td>with internal reference sensor: ± 0.28°C / ± 0.50°F (in insert)</td>
+                                                    <td>with internal reference sensor @ 350°C / 662°F : ± 0.45°C / ± 0.81°F</td>
                                                 </tr>
                                                 <tr>
-                                                    <td>with internal reference sensor: ± 0.5°C / ± 0.90°F (in bath)</td>
+                                                    <td>with internal reference sensor @ 200°C / 392°F : ± 0.40°C / ± 0.72°F</td>
                                                 </tr>
                                                 <tr>
                                                     <th>Stability</th>
-                                                    <td>± 0.02°C / ± 0.036°F</td>
+                                                    <td>± 0.05°C / ± 0.09°F</td>
                                                 </tr>
                                                 <tr>
                                                     <th>Resolution (user-selectable)</th>
                                                     <td>1° or 0.1° or 0.01° or 0.001˚</td>
                                                 </tr>
                                                 <tr>
-                                                    <th rowspan="3" class="align-middle">Heating time</th>
-                                                    <td>28 to 100°C / 82 to 212°F. . . . . . . . . . . . 3 minutes</td>
+                                                    <th class="align-middle">Heating time</th>
+                                                    <td>23 to 350°C / 73 to 662°F. . . . . . . . . . . . . 6 minutes</td>
                                                 </tr>
                                                 <tr>
-                                                    <td>50 to 100°C / 122 to 212°F. . . . . . . . . . . 2 minutes</td>
+                                                    <th rowspan="2" class="align-middle">Cooling time</th>
+                                                    <td>350 to 100°C / 662 to 212°F. . . . . . . . . . . 20 minutes</td>
                                                 </tr>
                                                 <tr>
-                                                    <td>100 to 250°C / 212 to 482°F. . . . . . . . . . 9 minutes</td>
+                                                    <td>100 to 50°C / 212 to 122°F. . . . . . . . . . . . 14 minutes</td>
                                                 </tr>
                                                 <tr>
-                                                    <th rowspan="3" class="align-middle">Cooling time</th>
-                                                    <td>250 to 100°C / 482 to 212°F. . . . . . . . . . 27 minutes</td>
+                                                    <th>Time to Stability</th>
+                                                    <td>10 minutes</td>
                                                 </tr>
                                                 <tr>
-                                                    <td>100 to 50°C / 212 to 122°F. . . . . . . . . . . 27 minutes</td>
+                                                    <th>Immersion depth</th>
+                                                    <td>115 mm / 4.53 in</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                    <div class="form-group row">
+                                        <table class="table table-responsive-sm table-bordered">
+                                            <tbody>
+                                                <tr class="spacer" style="border: none;" valign="middle">
+                                                    <th class="align-middle" style="background-color:  #fbb03b; " rowspan="11" valign="middle">CTC 652</th>
+                                                    <th>Temperature range</th>
+                                                    <td>28 to 650°C / 82 to 1202°F</td>
                                                 </tr>
                                                 <tr>
-                                                    <td>50 to 28°C / 122 to 82°F. . . . . . . . . . . .  28 minutes</td>
+                                                    <th rowspan="2" class="align-middle" >Accuracy</th>
+                                                    <td>with external STS ref. sensor (model C): ± 0.40°C / ± 0.72°F</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>with internal reference sensor : ± 0.60°C / ± 1.08°F</td>
+                                                </tr>
+                                                <tr>
+                                                    <th>Stability</th>
+                                                    <td>± 0.05°C / ± 0.09°F</td>
+                                                </tr>
+                                                <tr>
+                                                    <th>Resolution (user-selectable)</th>
+                                                    <td>1° or 0.1° or 0.01° or 0.001˚</td>
+                                                </tr>
+                                                <tr>
+                                                    <th class="align-middle">Heating time</th>
+                                                    <td>23 to 650°C / 73 to 1202°F. . . . . . . . . . . . 33 minutes</td>
+                                                </tr>
+                                                <tr>
+                                                    <th rowspan="2" class="align-middle">Cooling time</th>
+                                                    <td>650 to 100°C / 1202 to 212°F. . . . . . . . . . 48 minutes</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>100 to 50°C / 212 to 122°F. . . . . . . . . . . . 25 minutes</td>
+                                                </tr>
+                                                <tr>
+                                                    <th>Time to Stability</th>
+                                                    <td>5 minutes</td>
+                                                </tr>
+                                                <tr>
+                                                    <th class="align-middle">Immersion depth</th>
+                                                    <td>190 mm / 7.48 in</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                    <div class="form-group row">
+                                        <table class="table table-responsive-sm table-bordered">
+                                            <tbody>
+                                                <tr class="spacer" style="border: none;" valign="middle">
+                                                    <th class="align-middle" style="background-color:  #fbb03b; " rowspan="11" valign="middle">CTC 660</th>
+                                                    <th>Temperature range</th>
+                                                    <td>28 to 660°C / 82 to 1220°F</td>
+                                                </tr>
+                                                <tr>
+                                                    <th rowspan="2" class="align-middle" >Accuracy</th>
+                                                    <td>with external STS ref. sensor (model C): ± 0.45°C / ± 0.81°F</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>with internal reference sensor : ± 0.75°C / ± 1.35°F</td>
+                                                </tr>
+                                                <tr>
+                                                    <th>Stability</th>
+                                                    <td>± 0.08°C / ± 0.14°F</td>
+                                                </tr>
+                                                <tr>
+                                                    <th>Resolution (user-selectable)</th>
+                                                    <td>1° or 0.1° or 0.01° or 0.001˚</td>
+                                                </tr>
+                                                <tr>
+                                                    <th class="align-middle">Heating time</th>
+                                                    <td>23 to 660°C / 73 to 1220°F. . . . . . . . . . . . 18 minutes</td>
+                                                </tr>
+                                                <tr>
+                                                    <th rowspan="2" class="align-middle">Cooling time</th>
+                                                    <td>660 to 100°C / 1220 to 212°F. . . . . . . . . . 39 minutes</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>100 to 50°C / 212 to 122°F. . . . . . . . . . . . 18 minutes</td>
+                                                </tr>
+                                                <tr>
+                                                    <th>Time to Stability</th>
+                                                    <td>5 minutes</td>
+                                                </tr>
+                                                <tr>
+                                                    <th>Immersion depth</th>
+                                                    <td>115 mm / 4.53 in</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                    <div class="form-group row">
+                                        <table class="table table-responsive-sm table-bordered">
+                                            <tbody>
+                                                <tr class="spacer" style="border: none;" valign="middle">
+                                                    <th class="align-middle" style="background-color:  #fbb03b; " rowspan="9" valign="middle">CTC 1205</th>
+                                                    <th>Temperature range</th>
+                                                    <td>100 to 1205°C / 212 to 2201°F</td>
+                                                </tr>
+                                                <tr>
+                                                    <th class="align-middle">Accuracy</th>
+                                                    <td>± 2°C / ± 3.6°F</td>
+                                                </tr>
+                                                <tr>
+                                                    <th>Stability</th>
+                                                    <td>±0.1°C / ±0.18°F</td>
+                                                </tr>
+                                                <tr>
+                                                    <th>Resolution (user-selectable)</th>
+                                                    <td>1° or 0.1° or 0.01° or 0.001˚</td>
+                                                </tr>
+                                                <tr>
+                                                    <th class="align-middle">Heating time</th>
+                                                    <td>23 to 1205°C / 73 to 2201°F. . . . . . . . . . . 50 minutes</td>
+                                                </tr>
+                                                <tr>
+                                                    <th rowspan="2" class="align-middle">Cooling time</th>
+                                                    <td>1205 to 300°C / 2201 to 672°F. . . . . . . . . 45 minutes</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>300 to 50°C / 672 to 122°F. . . . . . . . . . . . 45 minutes</td>
                                                 </tr>
                                                 <tr>
                                                     <th>Time to Stability</th>
                                                     <td>15 minutes</td>
                                                 </tr>
                                                 <tr>
-                                                    <th rowspan="2" class="align-middle">Immersion depth</th>
-                                                    <td>Insert Hole version : 180 mm / 7.1 in</td>
-                                                </tr>
-                                                <tr>
-                                                    <td>Bath version : 150 mm / 5.9 in</td>
-                                                </tr>
-                                            </tbody>
-                                        </table>
-                                    </div>
-                                    <div class="form-group row">
-                                        <table class="table table-responsive-sm table-bordered">
-                                            <tbody>
-                                                <tr class="spacer" style="border: none;" valign="middle">
-                                                    <th class="align-middle" style="background-color:  #fbb03b; " rowspan="15" valign="middle">RTC 187</th>
-                                                    <th>Temperature range</th>
-                                                    <td>-45 to 180° C/-49 to 356° F</td>
-                                                </tr>
-                                                <tr>
-                                                    <th rowspan="2" class="align-middle" >Accuracy</th>
-                                                    <td>with external STS ref. sensor (model B & C) :  ± 0.04° C / ± 0.07° F</td>
-                                                </tr>
-                                                <tr>
-                                                    <td>with internal reference sensor: ± 0.12° C / ± 0.18° F</td>
-                                                </tr>
-                                                <tr>
-                                                    <th>Stability</th>
-                                                    <td>± 0.005° C / ± 0.009° F</td>
-                                                </tr>
-                                                <tr>
-                                                    <th>Resolution (user-selectable)</th>
-                                                    <td>1° or 0.1° or 0.01° or 0.001˚</td>
-                                                </tr>
-                                                <tr>
-                                                    <th rowspan="3" class="align-middle">Heating time</th>
-                                                    <td>-45 to 23° C /-49 to 73 °F . . . . . . . . . . . . . . . 7 minutes</td>
-                                                </tr>
-                                                <tr>
-                                                    <td>23 to 100° C / 73 to 212° F. . . . . . . . . . . . . . 8 minutes</td>
-                                                </tr>
-                                                <tr>
-                                                    <td>100 to 180° C / 212 to 356° F. . . . . . . . . . . . 9 minutes</td>
-                                                </tr>
-                                                <tr>
-                                                    <th rowspan="4" class="align-middle">Cooling time</th>
-                                                    <td>180 to 100 °C / 311 to 212° F  . . . . . . . . . . . 8 minutes</td>
-                                                </tr>
-                                                <tr>
-                                                    <td>100 to 23° C / 212 to 73° F . . . . . . . . . . . . . 11 minutes</td>
-                                                </tr>
-                                                <tr>
-                                                    <td>23 to -30° C / 73 to -22° F. . . . . . . . . . . . . . 17 minutes</td>
-                                                </tr>
-                                                <tr>
-                                                    <td>-30 to -45° C / -22 to -49° F .. . . . . . . . . . . . 25 minutes</td>
-                                                </tr>
-                                                <tr>
-                                                    <th>Time to Stability</th>
-                                                    <td>10 minutes</td>
-                                                </tr>
-                                                <tr>
-                                                    <th>Immersion depth</th>
-                                                    <td>160mm / 6.3 in</td>
-                                                </tr>
-                                            </tbody>
-                                        </table>
-                                    </div>
-                                    <div class="form-group row">
-                                        <table class="table table-responsive-sm table-bordered">
-                                            <tbody>
-                                                <tr class="spacer" style="border: none;" valign="middle">
-                                                    <th class="align-middle" style="background-color:  #fbb03b; width: 11%; " rowspan="15" valign="middle"></th>
-                                                    <th>Temperature range</th>
-                                                    <td>33 to 700°C/91 to 1292°F</td>
-                                                </tr>
-                                                <tr>
-                                                    <th rowspan="2" class="align-middle" >Accuracy</th>
-                                                    <td>with external STS ref. sensor (model B & C): ± 0.11°C / ± 0.2°F</td>
-                                                </tr>
-                                                <tr>
-                                                    <td>with internal reference sensor: ± 0.29°C / ± 0.52°F</td>
-                                                </tr>
-                                                <tr>
-                                                    <th rowspan="3" class="align-middle">Stability</th>
-                                                    <td>@ 33 to 125ºC/91 to 257ºF : ±0.008°C/±0.015°F</td>
-                                                </tr>
-                                                <tr>
-                                                    <td>@ 125 to 425ºC/257 to 797ºF : ±0.015ºC/±0.027ºF</td>
-                                                </tr>
-                                                <tr>
-                                                    <td>@ 425 to 700ºC/797 to 1292ºF : ±0.02ºC/±0.036ºF</td>
-                                                </tr>
-                                                <tr>
-                                                    <th>Resolution (user-selectable)</th>
-                                                    <td>1° or 0.1° or 0.01° or 0.001˚</td>
-                                                </tr>
-                                                <tr>
-                                                    <th>Heating time</th>
-                                                    <td>33 to 700°C / 91 to 1292°F . . . . . . . . . . . . . 45 minutes</td>
-                                                </tr>
-                                                <tr>
-                                                    <th rowspan="3" class="align-middle">Cooling time</th>
-                                                    <td>700 to 100°C / 1292 to 212°F . . . . . . . . . . . 43 minutes</td>
-                                                </tr>
-                                                <tr>
-                                                    <td>100 to 50°C / 212 to 122°F . . . . . . . . . . . . . 17 minutes</td>
-                                                </tr>
-                                                <tr>
-                                                    <td>50 to 33°C / 122 to 91°F . . . . . . . . . . . . . . . 20 minutes</td>
-                                                </tr>
-                                                <tr>
-                                                    <th>Time to Stability</th>
-                                                    <td>10 minutes</td>
-                                                </tr>
-                                                <tr>
-                                                    <th>Immersion depth</th>
-                                                    <td>200 mm / 7.9 in</td>
+                                                    <th class="align-middle">Immersion depth</th>
+                                                    <td>110 mm / 3.00 in</td>
                                                 </tr>
                                             </tbody>
                                         </table>
@@ -665,12 +494,8 @@
                                     </div>
                                     <div class="form-group row">
                                         <ul style="list-style-type:none; margin-top: 2%;">
-                                            <li><a href="{{ asset('storage/files/RTC/RTC_700_Datasheet.pdf')}}" style="font-size: 15pt; color: black;" download><i class="far fa-file-alt"></i>  RTC 700 Datasheet</li>
-                                            <li><a href="{{ asset('storage/files/RTC/RTC_156-157_Datasheet.pdf')}}" style="font-size: 15pt; color: black;" download><i class="far fa-file-alt"></i>  RTC 156/157 Datasheet</li>
-                                            <li><a href="{{ asset('storage/files/RTC/RTC_158-250_Datasheet.pdf')}}" style="font-size: 15pt; color: black;" download><i class="far fa-file-alt"></i>  RTC 158/250 Datasheet</li>
-                                            <li><a href="{{ asset('storage/files/RTC/RTC_159_Datasheet.pdf')}}" style="font-size: 15pt; color: black;" download><i class="far fa-file-alt"></i>  RTC 159 Datasheet</li>
-                                            <li><a href="{{ asset('storage/files/RTC/RTC_187_Datasheet.pdf')}}" style="font-size: 15pt; color: black;" download><i class="far fa-file-alt"></i>  RTC 187 Datasheet</li>
-                                            <li><a href="{{ asset('storage/files/DLC_Datasheet.pdf')}}" style="font-size: 15pt; color: black;" download><i class="far fa-file-alt"></i>  DLC Datasheet</a></li>                  
+                                            <li><a href="{{ asset('storage/files/CTC/CTC_155-350-652-660_Datasheet.pdf')}}" style="font-size: 15pt; color: black;" download><i class="far fa-file-alt"></i>  CTC 155/350/652/660 Datasheet</li>
+                                            <li><a href="{{ asset('storage/files/CTC/CTC_1205_Datasheet.pdf')}}" style="font-size: 15pt; color: black;" download><i class="far fa-file-alt"></i>  CTC 1205 Datasheet</li>
                                         </ul> 
                                     </div>
 
@@ -679,10 +504,9 @@
                                     </div>
                                     <div class="form-group row">
                                         <ul style="list-style-type:none; margin-top: 2%;">
-                                            <li><a href="{{ asset('storage/files/RTC/RTC_User_Manual.pdf')}}" style="font-size: 15pt; color: black;" download><i class="far fa-file-alt"></i>  RTC User Manual</li>
-                                            <li><a href="{{ asset('storage/files/RTC/RTC_Reference_Manual.pdf')}}" style="font-size: 15pt; color: black;" download><i class="far fa-file-alt"></i>  RTC Reference Manual</li>
+                                            <li><a href="{{ asset('storage/files/CTC/CTC_User_Manual.pdf')}}" style="font-size: 15pt; color: black;" download><i class="far fa-file-alt"></i>  CTC User Manual</li>
+                                            <li><a href="{{ asset('storage/files/CTC/CTC_Reference_Manual.pdf')}}" style="font-size: 15pt; color: black;" download><i class="far fa-file-alt"></i>  CTC Reference Manualt</li>
                                             <li><a href="{{ asset('storage/files/JOFRACAL_User_Manual.pdf')}}" style="font-size: 15pt; color: black;" download><i class="far fa-file-alt"></i>  JofraCal User Manual Temperature</li>
-                                            <!--<li><a href="{{ asset('storage/files/DLC_Datasheet.pdf')}}" style="font-size: 15pt; color: black;" download><i class="far fa-file-alt"></i>  DLC User Manual</li>-->
                                             <li><a href="{{ asset('storage/files/Ametrim_User_Manual.pdf')}}" style="font-size: 15pt; color: black;" download><i class="far fa-file-alt"></i>  Ametrim User Manual</li>
                                         </ul> 
                                     </div>
@@ -691,28 +515,13 @@
                             </div>
                             <div class="row to-be-filtered filter-video" style="margin-top: 5%; margin-left: 9%">
                                 <div class="col-lg-6">
-                                    <div class="form-group row">
-                                        <iframe width="420" height="315" src="https://www.youtube.com/embed/1m_hnKLoNs8"></iframe>
+                                    <div class="form-group row" style="margin-right: 3%;">
+                                        <iframe width="420" height="315" src="https://www.youtube.com/embed/kKH2ozqpEys"></iframe>
                                     </div>
                                 </div>
                                 <div class="col-lg-6">
                                     <div class="form-group row">
-                                        <iframe width="420" height="315"
-                                                src="https://www.youtube.com/embed/GG4iDoRqiRU" frameborder="0" allowfullscreen>
-                                        </iframe>                                    
-                                    </div>
-                                </div>
-                                <div class="col-lg-6">
-                                    <div class="form-group row">
-                                        <iframe width="420" height="315"
-                                                src="https://www.youtube.com/embed/0pTlN-10ULE" frameborder="0" allowfullscreen>
-                                        </iframe>                                    
-                                    </div>
-                                </div>
-                                <div class="col-lg-6">
-                                    <div class="form-group row">
-                                        <iframe width="420" height="315"
-                                                src="https://www.youtube.com/embed/x7gyu4l9GUo" frameborder="0" allowfullscreen>
+                                        <iframe width="420" height="315" src="https://www.youtube.com/embed/tWnchkfKIwM" frameborder="0" allowfullscreen>
                                         </iframe>                                    
                                     </div>
                                 </div>

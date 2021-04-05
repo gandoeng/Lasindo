@@ -12,6 +12,8 @@ use App\Models\Backend\SlideBanners;
 use App\Models\Backend\Products;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Mail;
+use App\Mail\postMail;
 
 class ProductsController extends Controller
 {
@@ -71,10 +73,12 @@ class ProductsController extends Controller
         $country = $request->input('country');
         $phone = $request->input('phone');
         $email = $request->input('email');
-        $message = $request->input('message');
+        $messages = $request->input('message');
+
+        Mail::to('nursanogandung@yahoo.co.id')->send(new \App\Mail\postMail($firstName,$lastName,$company,$country,$phone,$email,$messages));
 
         DB::table('product_inquiries')->insert([
-            'firsname' => $firstName, 'lastName' => $lastName, 'company' => $company, 'country' => $country, 'phone' => $phone, 'email' => $email, 'message' => $message
+            'firsname' => $firstName, 'lastName' => $lastName, 'company' => $company, 'country' => $country, 'phone' => $phone, 'email' => $email, 'message' => $messages
         ]);
 
         toastr()->success('Request quote success.');

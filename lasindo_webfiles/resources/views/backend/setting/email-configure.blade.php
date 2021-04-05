@@ -27,12 +27,12 @@
 							@endif
 							<td>
 								@if($e->statusEmail == "set")
-								<form action="{{route('admin.setting.unsetEmail',array($e->id))}}" method="post">
+								<form action="{{route('admin.unsetEmail',array($e->id))}}" method="post" enctype="multipart/form-data">
 									@csrf
 									<button class="btn btn-sm btn-danger" type="submit">Unset</button>
 								</form>
 								@else
-								<form action="{{route('admin.setting.setEmail',array($e->id))}}" method="post">
+								<form action="{{route('admin.setEmail',array($e->id))}}" method="post" enctype="multipart/form-data">
 									@csrf
 									<button class="btn btn-sm btn-primary" type="submit">Set</button>
 								</form>

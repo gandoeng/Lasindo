@@ -18,6 +18,12 @@
     <link rel="stylesheet" href="{{ url('maintheme/assets/libs/dataTables-1.10.20/media/css/jquery.dataTables.min.css') }}">
     <link rel="stylesheet" href="{{ url('maintheme/assets/libs/lightbox2/css/lightbox.min.css') }}">
     <link rel="stylesheet" href="{{ url('maintheme/assets/libs/toastr/toastr.min.css') }}"/>
+    <script src="https://cdn.tiny.cloud/1/no-api-key/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
+    <script type="text/javascript">
+    tinymce.init({
+        selector: '#mytextarea'
+    });
+  </script>
     <style>
         label {
             font-weight: bold;

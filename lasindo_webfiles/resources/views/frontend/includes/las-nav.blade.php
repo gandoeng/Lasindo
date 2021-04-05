@@ -39,6 +39,11 @@
                             </div>
                             <div class="card">
                                 <div class="card-header">
+                                    <h2 class="mb-0"><a class="btn-link btn" href="{{route('frontend.news')}}">News & Events</a></h2>
+                                </div>
+                            </div>
+                            <div class="card">
+                                <div class="card-header">
                                     <h2 class="mb-0"><a class="btn-link btn" href="{{route('frontend.index')}}">Contact Us</a></h2>
                                 </div>
                             </div>
@@ -60,6 +65,9 @@
                     </li>
                     <li class="nav-item {{ activeClass(Route::is('frontend.epc.index')) }}">
                         <a class="nav-link" href="{{route('frontend.epc.index')}}">EPC</a>
+                    </li>
+                    <li class="nav-item {{ activeClass(Route::is('frontend.news')) }}">
+                        <a class="nav-link" href="{{route('frontend.news')}}">News & Events</a>
                     </li>
                     <li class="nav-item {{ activeClass(Route::is('frontend.contact')) }}">
                         <a class="nav-link" href="{{route('frontend.contact')}}">Contact Us</a>

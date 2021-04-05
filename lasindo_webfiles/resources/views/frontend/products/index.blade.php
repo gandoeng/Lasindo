@@ -161,6 +161,12 @@
                                                     <a href="{{route('frontend.RTC.RTC','temperature')}}" style=" margin-bottom: 0; float: left; margin-left: 0%; text-align: center; font-size: 12pt; width: 100%; font-size: 12pt; height: 20px; color: black;"><strong> {{$p->fullName}}</strong></a>
                                                     @elseif($p->abbreviation == 'PTC')
                                                     <a href="{{route('frontend.PTC.PTC','temperature')}}" style=" margin-bottom: 0; float: left; margin-left: 0%; text-align: center; font-size: 12pt; width: 100%; font-size: 12pt; height: 20px; color: black;"><strong> {{$p->fullName}}</strong></a>
+                                                    @elseif($p->abbreviation == 'CTC')
+                                                    <a href="{{route('frontend.CTC.CTC','temperature')}}" style=" margin-bottom: 0; float: left; margin-left: 0%; text-align: center; font-size: 12pt; width: 100%; font-size: 12pt; height: 20px; color: black;"><strong> {{$p->fullName}}</strong></a>
+                                                    @elseif($p->abbreviation == 'MTC')
+                                                    <a href="{{route('frontend.MTC.MTC','temperature')}}" style=" margin-bottom: 0; float: left; margin-left: 0%; text-align: center; font-size: 12pt; width: 100%; font-size: 12pt; height: 20px; color: black;"><strong> {{$p->fullName}}</strong></a>
+                                                    @elseif($p->abbreviation == 'ETC')
+                                                    <a href="{{route('frontend.ETC.ETC','temperature')}}" style=" margin-bottom: 0; float: left; margin-left: 0%; text-align: center; font-size: 12pt; width: 100%; font-size: 12pt; height: 20px; color: black;"><strong> {{$p->fullName}}</strong></a>
                                                     @else
                                                     <a href="#" style=" margin-bottom: 0; float: left; margin-left: 0%; text-align: center; font-size: 12pt; width: 100%; font-size: 12pt; height: 20px; color: black;"><strong> {{$p->fullName}}</strong></a>
                                                     @endif

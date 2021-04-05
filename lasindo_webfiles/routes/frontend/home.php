@@ -5,6 +5,7 @@ use App\Http\Controllers\Frontend\ContactController;
 use App\Http\Controllers\Frontend\HomeController;
 use App\Http\Controllers\Frontend\ProductsController;
 use App\Http\Controllers\Frontend\TermsController;
+use App\Http\Controllers\Frontend\NewsController;
 use Tabuna\Breadcrumbs\Trail;
 
 /*
@@ -88,6 +89,13 @@ Route::group(['prefix' => 'ETC', 'as' => 'ETC.'], function () {
     });   
     Route::get('{ETC}', [ProductsController::class, 'ETC'])->name('ETC');
 });
+
+//Route news
+Route::get('/news', [NewsController::class, 'index'])->name('news')
+    ->breadcrumbs(function (Trail $trail) {
+        $trail->push(__('News'), route('frontend.news'));
+    });
+
 
 
 

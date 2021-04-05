@@ -6,3 +6,19 @@
 <script src="{{ url('maintheme/assets/libs/toastr/toastr.min.js') }}"></script>
 <script src="{{ url('maintheme/assets/js/wow.min.js') }}"></script>
 <script src="{{ url('maintheme/assets/js/main.js') }}"></script>
+
+
+<script type="text/javascript">
+	function truncateText(selector, maxLength) {
+    var element = document.querySelector(selector),
+        truncated = element.innerText;
+
+    if (truncated.length > maxLength) {
+        truncated = truncated.substr(0,maxLength) + '...';
+    }
+    return truncated;
+}
+
+	document.querySelector('p').innerText = truncateText('p', 200);
+
+</script>

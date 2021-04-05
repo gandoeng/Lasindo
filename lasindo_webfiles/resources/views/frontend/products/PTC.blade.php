@@ -247,10 +247,10 @@
                             <div class="brand-name filter-spesification">
                                 <div class="col-lg-12" style="margin-left: 25%;">
                                     <div class="form-group row" style="margin-bottom: 0%; ">
-                                        <h4 style="color: black;">RTC</h4>
+                                        <h4 style="color: black;">PTC</h4>
                                     </div>
                                     <div class="form-group row" style="margin-top: 0%;">
-                                        <h4 style="color: black; font-size: 12pt;">Reference Temperature Calibrator</h4>
+                                        <h4 style="color: black; font-size: 12pt;">Professional Temperature Calibrator</h4>
                                     </div>
                                     <div class="form-group row">
                                         <table class="table table-responsive-sm table-bordered">
@@ -528,7 +528,6 @@
                                             <li><a href="{{ asset('storage/files/PTC/PTC_User_Manual.pdf')}}" style="font-size: 15pt; color: black;" download><i class="far fa-file-alt"></i>  PTC User Manual</li>
                                             <li><a href="{{ asset('storage/files/PTC/PTC_Reference_Manual.pdf')}}" style="font-size: 15pt; color: black;" download><i class="far fa-file-alt"></i>  PTC Reference Manual</li>
                                             <li><a href="{{ asset('storage/files/JOFRACAL_User_Manual.pdf')}}" style="font-size: 15pt; color: black;" download><i class="far fa-file-alt"></i>  JofraCal User Manual Temperature</li>
-                                            <!--<li><a href="{{ asset('storage/files/DLC_Datasheet.pdf')}}" style="font-size: 15pt; color: black;" download><i class="far fa-file-alt"></i>  DLC User Manual</li>-->
                                             <li><a href="{{ asset('storage/files/Ametrim_User_Manual.pdf')}}" style="font-size: 15pt; color: black;" download><i class="far fa-file-alt"></i>  Ametrim User Manual</li>
                                         </ul> 
                                     </div>
