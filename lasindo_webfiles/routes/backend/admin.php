@@ -183,16 +183,11 @@ Route::get('setting', [DashboardController::class, 'setting'])->name('setting')
     $trail->push(__('Setting'), route('admin.setting'));
 });
 
-Route::post('/setEmail/{$id}', [SettingController::class, 'setEmail'])->name('setEmail')
-    ->breadcrumbs(function (Trail $trail) {
-    $trail->push(__('Set Email'), route('admin.setEmail'));
-});
+Route::post('updateEmailBut',[SettingController::class, 'updateEmailBut'])->name('setting.updateEmailBut');
 
-//Route::post('/unset-email/{$id}',  [DashboardController::class, 'unsetEmail'])->name('setting.unset-email');
-Route::post('/unsetEmail/{$id}', [SettingController::class, 'unsetEmail'])->name('unsetEmail')
-    ->breadcrumbs(function (Trail $trail) {
-    $trail->push(__('Unset Email'), route('admin.unsetEmail'));
-});
+//update setting
+Route::get('updateEmail', [SettingController::class, 'updateEmail'])->name('setting.updateEmail');
+
 
 //News
 Route::get('news', [NewsController::class, 'index'])->name('news')
@@ -207,13 +202,18 @@ Route::get('/createNews', [NewsController::class, 'newsCreate'])->name('createNe
 
 Route::post('/createNewsSubmit',[NewsController::class, 'createNewsSubmit'])->name('createNewsSubmit');
 
-Route::get('/updateNews', [NewsController::class, 'newsUpdate'])->name('updateNews')
-    ->breadcrumbs(function (Trail $trail) {
-    $trail->push(__('Update News'), route('admin.updateNews'));
-});
+Route::get('/updateNews/{id}', [NewsController::class, 'newsUpdate'])->name('updateNews');
 
 //delete news
 Route::post('/deleteNews/{id}',[NewsController::class,'deleteNews'])->name('news.deleteNews');
+
+//update news Button
+Route::post('/updateNewsButton/{id}',[NewsController::class,'updateNewsButton'])->name('news.updateNewsButton');
+
+//news publice
+Route::get('/newsPublice/{id}',[NewsController::class,'newsPublice'])->name('news.newsPublice');
+Route::get('/newsUnpublice/{id}',[NewsController::class,'newsUnpublice'])->name('news.newsUnpublice');
+
 
 //Route::get('/create-news', [NewsController::class,'newsCreate'])->name('newsCreate');
 

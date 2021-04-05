@@ -96,6 +96,9 @@ Route::get('/news', [NewsController::class, 'index'])->name('news')
         $trail->push(__('News'), route('frontend.news'));
     });
 
+//News Page
+Route::get('/news/page/{id}',[NewsController::class,'newsPage'])->name('news.page');
+
 
 
 

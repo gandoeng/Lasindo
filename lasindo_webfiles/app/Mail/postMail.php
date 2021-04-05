@@ -17,22 +17,15 @@ class postMail extends Mailable
      * @return void
      */
 
-    public $firstName;
-    public $lastName;
-    public $company;
-    public $country;
-    public $phone;
-    public $email;
-    public $messages;
-    public function __construct($firstName,$lastName,$company,$country,$phone,$email,$messages)
+    public $data;
+
+    public function __construct($data)
     {
         //
-        $this->$firstName = $firstName;
-        $this->$lastName = $lastName;
-        $this->$company = $company;
-        $this->$phone = $phone;
-        $this->$email = $email;
-        $this->$messages = $messages;
+        
+
+        $this->data = $data;
+        //dd($this->data);
     }
 
     /**
@@ -42,6 +35,6 @@ class postMail extends Mailable
      */
     public function build()
     {
-        return $this->subject('Request Quote')->view('invoice');
+        return $this->subject('Request Quote')->view('invoice')->with(['data' => $this->data]);
     }
 }

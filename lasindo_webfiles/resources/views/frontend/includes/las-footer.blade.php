@@ -12,11 +12,24 @@
                         <li><strong>EMAIL.</strong> <a href="mailto:{{$footer[0]->email}}">{{$footer[0]->email}}</a></li>
                     </ul>
                 </div>
-                <div id="f-mobile" class="col-md-6 d-flex">
+                <div class="col-md-6 d-flex">                  
                     <div class="align-self-top ml-auto">
-                        <h1>Contact Us</h1>
-                        <h4><a href="https://api.whatsapp.com/send?phone=62{{substr($footer[0]->wa,1)}}&text=Halo,%20saya%20tertarik%20dengan%20produk%20Anda." target="_blank" class="wa">{{wordwrap($footer[0]->wa,4,' ',true)}}</a></h4>
-                        <ul class="sosmed">
+                        <h4 class="text-left">REQUEST QUOTE</h4>  
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="EMAIL ADDRESS" style="width: 190%;">
+                                </div>    
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group row">
+                                    <form action="#" method="get" enctype="multipart/form-data">
+                                    <button class="btn btn-pill btn-warning" type="submit" style="margin-left: 130%; color: white; background-color:  #fbb03b;">Submit</button>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                        <ul class="sosmeds">
                             <li id="icons">
                                 <a href="{{$footer[0]->fb}}" target="_blank"><img src="{{ url('maintheme/assets/img/icons/fb.png') }}" alt="Facebook icon"></a>
                             </li>

@@ -33,12 +33,12 @@
                                     <th>Message</th>
                                 </tr>
                                 <tr>
-                                    <td>{{ $firstName}} {{ $lastName}}</td>
-                                    <td>{{ $company }}</td>
-                                    <td>{{ $country }}</td>
-                                    <td>{{ $email}}</td>
-                                    <td>{{ $phone}}</td>
-                                    <td>{{ $messages}}</td>
+                                    <td>{{ $data['firstName']}} {{ $data['lastName']}}</td>
+                                    <td>{{ $data['company'] }}</td>
+                                    <td>{{ $data['country'] }}</td>
+                                    <td>{{ $data['email']}}</td>
+                                    <td>{{ $data['phone']}}</td>
+                                    <td>{{ $data['messages']}}</td>
                                 </tr>
                             </tbody>
                         </table>

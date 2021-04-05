@@ -39,16 +39,19 @@
 										@csrf
 										<button class="btn btn-danger btn-sm spasiTombolKiri" type="submit"><i class="fas fa-trash"></i></button>
 									</form>
-									<form style="float: left;" action="#" method="post">
-										@csrf
+									@if($n->newsPublice == 'unset')
+									<form style="float: left;" action="{{route('admin.news.newsPublice',array($n->id))}}" method="get">
 										<button class="btn btn-info btn-sm spasiTombolKiri" type="submit" ><i class="fas fa-check-circle"></i></button>
 									</form>
+									@else
+									<form style="float: left;" action="{{route('admin.news.newsUnpublice',array($n->id))}}" method="get">
+										<button class="btn btn-info btn-sm spasiTombolKiri" type="submit" ><i class="fas fa-minus-circle"></i></button>
+									</form>
+									@endif
 									<button type="button" style="float: left;" class="btn btn-warning btn-sm spasiTombolKiri" data-toggle="modal" data-target="#edit-modal">
               							<i class="far fa-file-alt"></i>
               						</button>
-
-              						<form style="float: left;" action="{{route('admin.updateNews')}}" method="get">
-              							
+              						<form style="float: left;" action="{{route('admin.updateNews',array($n->id))}}" method="get">
               							<button type="submit" class="btn btn-danger btn-sm spasiTombolKiri">
               							<i class="fas fa-edit"></i>
                         				</button>

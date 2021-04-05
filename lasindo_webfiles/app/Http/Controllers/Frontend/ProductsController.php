@@ -74,8 +74,18 @@ class ProductsController extends Controller
         $phone = $request->input('phone');
         $email = $request->input('email');
         $messages = $request->input('message');
+        $data = [
+            'firstName' => $firstName,
+            'lastName' => $lastName,
+            'company' => $company,
+            'country' => $country,
+            'phone' => $phone,
+            'email' => $email,
+            'messages' => $messages
+        ];
 
-        Mail::to('nursanogandung@yahoo.co.id')->send(new \App\Mail\postMail($firstName,$lastName,$company,$country,$phone,$email,$messages));
+        $email = DB:table('email_reciver')->where('id','=','1')->value('email');
+        Mail::to($email)->send(new \App\Mail\postMail($data));
 
         DB::table('product_inquiries')->insert([
             'firsname' => $firstName, 'lastName' => $lastName, 'company' => $company, 'country' => $country, 'phone' => $phone, 'email' => $email, 'message' => $messages
@@ -96,7 +106,7 @@ class ProductsController extends Controller
             'brands'    => $brands,
             'brandsec'  => $brandsec,
             'products'  => $products,
-            'slides'    => $slides,
+            'slides'    => $slides
         ];
         
         return view('frontend.products.RTC', $rows);

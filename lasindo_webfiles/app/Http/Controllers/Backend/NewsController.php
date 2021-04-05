@@ -56,7 +56,7 @@ class NewsController extends Controller
     }
 
     public function deleteNews($id){
-        $newsImage = DB::table('news')->where('id','=',$id)->get();
+        $newsImage = DB::table('news')->where('id','=',$id)->value('newsImage');
 
         File::delete('storage/photos/newsPhotos'.$newsImage);
 
@@ -66,5 +66,46 @@ class NewsController extends Controller
         toastr()->success('Delete complate');
         return redirect()->route('admin.news');
     }
+
+    public function updateNewsButton(Request $request,$id){
+        $title = $request->input('title');
+        $newsImage = $request->file('newsImage');
+        $author = $request->input('author');
+        $newsDate = $request->input('newsDate');
+        $newsPublice = 'unset';
+        $newsContent = $request->input('mytextarea');
+
+        $newsImageOld = DB::table('news')->where('id','=',$id)->value('newsImage');
+        File::delete('storage/photos/newsPhotos'.$newsImage);
+
+        $fileName = $newsImage->getClientOriginalName();
+        $newsImage->move('storage/photos/newsPhotos',$fileName);
+
+        DB::table('news')->where('id','=',$id)->update([
+            'title' => $title, 'author' => $author, 'newsDate' => $newsDate, 'newsImage' => $fileName, 'newsContent' => $newsContent,'newsPublice' => $newsPublice
+        ]);
+
+        toastr()->success('Submit success');
+        return redirect()->route('admin.news');
+    }
+
+    public function newsPublice($id){
+        $publice = 'set';
+        DB::table('news')->where('id','=',$id)->update(array('newsPublice'=> $publice));
+
+        toastr()->success('Publice set');
+        return redirect()->route('admin.news');
+
+    }
+
+    public function newsUnpublice($id){
+        $publice = 'unset';
+        DB::table('news')->where('id','=',$id)->update(array('newsPublice'=> $publice));
+
+        toastr()->success('Unpublice set');
+        return redirect()->route('admin.news');
+
+    }
+
 
 }

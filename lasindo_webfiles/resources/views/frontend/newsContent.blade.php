@@ -35,7 +35,27 @@
         			</div>
         		</div>
         		<div class="row">
-        			
+                    @foreach ($page as $p)
+        			<div class="col-lg-12">
+                        <div class="form-group row">
+                            <img src="{{asset('storage/photos/newsPhotos/'.$p->newsImage)}}" style="width: 1200px;">
+                        </div>
+                    </div>
+
+                    <div class="col-lg-12" style="margin-top: 4%;">
+                        <div class="form-group row">
+                            <h3 style="font: bold;">{{$p->title}}</h3>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-12">
+                        <div class="form-group row" style="margin-bottom: 0%; margin-top: 0%;">
+                                <p class="limit-text" style="display: block; overflow: hidden; font-size: 20pt; text-align: justify;">
+                                    <?= str_replace('"', ' ',$p -> newsContent)?>
+                                </p>
+                            </div>
+                    </div>
+                    @endforeach
         		</div>
         	</div>
         </div>
