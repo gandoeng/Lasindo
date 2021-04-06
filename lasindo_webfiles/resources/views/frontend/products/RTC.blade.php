@@ -129,7 +129,7 @@
                                     <h4 class="brand-black">Ametek | Jofra</h4>
                                 </div>
                             </div>
-                        <div class="cat-name">
+                        <div class="cat-name cat-name-auto">
                             <div class="col-6 category-item" style="margin-left: 25%;">
                                 <div class="ml-0 mr-0">
                                 <div class="row brands no-margin">

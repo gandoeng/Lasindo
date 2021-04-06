@@ -316,6 +316,16 @@ body {
                 .cat-name {
                     padding: 0 0 2rem;
                     position: relative;
+
+                    &.cat-name-auto {
+                        &:after {
+                            width:400px;
+                                width: 60%;
+                                left: 0;
+                                right: 0;
+                                margin: auto;
+                        }
+                    }
                     &::after {
                         position: absolute;
                         bottom: 0;
