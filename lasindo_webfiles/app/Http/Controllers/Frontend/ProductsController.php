@@ -84,7 +84,7 @@ class ProductsController extends Controller
             'messages' => $messages
         ];
 
-        $email = DB:table('email_reciver')->where('id','=','1')->value('email');
+        $email = DB::table('settings')->where('set_key','=','admin_email')->value('value');
         Mail::to($email)->send(new \App\Mail\postMail($data));
 
         DB::table('product_inquiries')->insert([
@@ -180,8 +180,6 @@ class ProductsController extends Controller
         
         return view('frontend.products.ETC', $rows);
     }
-
-
 
 
 }

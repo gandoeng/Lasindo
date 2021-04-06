@@ -103,7 +103,7 @@
                                 <h4>{{getSectionFullName()}} Measurement</h4>
                             </div>
                             <div class="ml-0 mr-0">
-                                <div class="row brands">
+                                <div class="row brands2">
                                     @php 
                                         $count = 0;
                                         foreach ($brandsec as $brs) {
@@ -111,7 +111,7 @@
                                                 $count = $count+1;
                                                 foreach ($brands->where('name',$brs->brandsec) as $br) {
                                     @endphp
-                                            <div class="col p-2 d-flex {{$count==1 ? 'active' : '' }} ">
+                                            <div class="col p-2 d-flex {{$count==1 ? 'active' : '' }} active">
                                                 <div class="align-self-center m-auto">
                                                     <img src="{{$br->image}}" alt="{{$count.$brs->section}}-{{$brs->brandsec}}">
                                                 </div>
@@ -123,80 +123,84 @@
                                     @endphp
                                 </div>
                             </div>
-                            <div class="form-group">
+                        </div>
+                        <div class="form-group">
                                 <div class="brand-name">
-                                    <h4 style="color: black; font-size: 20pt; text-align: center;">Ametek | Jofra</h4>
+                                    <h4 class="brand-black">Ametek | Jofra</h4>
                                 </div>
-                            </div>   
-                            <div class="ml-0 mr-0">
-                                <div class="row brands">
-                                    <div class="col p-2 d-flex cat-brand active nav"  data-filter=".filter-overview">
-                                        <div class="align-self-center m-auto"  >
-                                            <h2>Overview</h2>
+                            </div>
+                        <div class="cat-name">
+                            <div class="col-6 category-item" style="margin-left: 25%;">
+                                <div class="ml-0 mr-0">
+                                <div class="row brands no-margin">
+                                    <div class="col p-2 d-flex cat-brand active nav"  data-filter=".filter-overview" >
+                                        <div class="align-self-center m-auto hover-overlay hover-menu">
+                                            <h5 class="hover-menu">Overview</h5>
                                         </div>
                                     </div>
                                     <div class="col p-2 d-flex cat-brand nav" data-filter=".filter-spesification" >
-                                        <div class="align-self-center m-auto">
-                                            <h2>Spesification</h2>
+                                        <div class="align-self-center m-auto hover-menu">
+                                            <h5>Spesification</h5>
                                         </div>
                                     </div>
-                                    <div class="col p-2 d-flex cat-brand nav" data-filter=".filter-download" >
+                                    <div class="col p-2 d-flex cat-brand nav hover-menu"  data-filter=".filter-download" >
                                         <div class="align-self-center m-auto">
-                                            <h2>Download</h2>
+                                            <h5>Download</h5>
                                         </div>
                                     </div>
-                                    <div class="col p-2 d-flex cat-brand nav" data-filter=".filter-video">
+                                    <div class="col p-2 d-flex cat-brand nav hover-menu" data-filter=".filter-video">
                                         <div class="align-self-center m-auto">
-                                            <h2>Video</h2>
+                                            <h5>Video</h5>
                                         </div>
                                     </div>
                                 </div>
-                            </div>
+                                </div>
+                            </div>  
                         </div>
                         <div id="brand-products">
-                            <div class="row to-be-filtered filter-overview" style="margin-top: 5%; margin-left: 9%">
+                            <div class="content-space to-be-filtered filter-overview ">
                                 <div class="col-lg-6">
-                                    <div class="card" style="max-height: 500px; max-width: 300px; margin-left: 30%;">
+                                    <div class="card image-overview" >
                                         <img  src="{{ asset('storage/product/rtc.jpg')}}">
                                     </div>
                                 </div>
                                 <div class="col-lg-6">
-                                    <div class="form-group row" style="margin-bottom: 0%; ">
-                                        <h4 style="color: black;">RTC</h4>
+                                    <div class="form-group row no-margin-bottom">
+                                        <h4 class="black" >RTC</h4>
                                     </div>
-                                    <div class="form-group row" style="margin-top: 0%;">
-                                        <h4 style="color: black; font-size: 12pt;">Reference Temperature Calibrator</h4>
+                                    <div class="form-group row no-margin-top" >
+                                        <h4 class="title-overview">Reference Temperature Calibrator</h4>
                                     </div>
                                     <div class="form-group row">
-                                        <ul>
-                                            <li><h5>Temperature range from -100 to 700°C (-148 to 1292°F) with 7 models</h5></li>
-                                            <li><h5>Accuracy to ± 0.04°C and Stability to ± 0.005°C</h5></li>
-                                            <li><h5>Dry block and liquid bath / dry block combined</h5></li>
-                                            <li><h5>Time saving fast cooling and heating times</h5></li>
-                                            <li><h5>Contamination free calibration of clamp sensors</h5></li>
-                                            <li><h5>“Plug and Play” intelligent reference sensor</h5></li>
-                                            <li><h5>Easy-to-read color display with User-friendly navigation</h5></li>
-                                            <li><h5>Lightweight and easy to carry</h5></li>
-                                            <li><h5>Multi-hole insert kits</h5></li>
-                                            <li><h5>JofraCal Calibration Software</h5></li>
-                                            <li><h5>Inputs for Thermocouple Calibration</h5></li>
+                                        <ul class="text-style">
+                                            <li><p>Temperature range from -100 to 700°C (-148 to 1292°F) with 7 models</p></li>
+                                            <li><p>Accuracy to ± 0.04°C and Stability to ± 0.005°C</p></li>
+                                            <li><p>Dry block and liquid bath / dry block combined</p></li>
+                                            <li><p>Time saving fast cooling and heating times</p></li>
+                                            <li><p>Contamination free calibration of clamp sensors</p></li>
+                                            <li><p>“Plug and Play” intelligent reference sensor</p></li>
+                                            <li><p>Easy-to-read color display with User-friendly navigation</p></li>
+                                            <li><p>Lightweight and easy to carry</p></li>
+                                            <li><p>Multi-hole insert kits</p></li>
+                                            <li><p>JofraCal Calibration Software</p></li>
+                                            <li><p>Inputs for Thermocouple Calibration</p></li>
                                         </ul>
                                     </div>
                                     <div class="form-group row">
                                         <form style="padding-top: 10px;">
-                                            <button class="btn btn-pill btn-warning" type="button" style="float: left; margin-left: 37%;50%; width: 200px; height: 50px; background-color: #fbb03b; color: white;" data-toggle="modal" data-target="#edit-modal">Request Quote</button>
+                                            <button class="btn btn-pill btn-warning button-lg-lasindo" type="button"  data-toggle="modal" data-target="#edit-modal">Request Quote</button>
                                         </form>
                                         <div class="modal fade" id="edit-modal">
                                             <div class="modal-dialog">
                                                 <div class="modal-content">
                                                     <div class="modal-header">
-                                                        <h1 class="modal-title" align="center" style="color: #d3d3d3; font-size: 12pt;">REQUEST QUOTE</h1>
-                                                        <button type="button" class="btn btn-sm close" data-dismiss="modal" aria-label="Close" style="border: none;">
+                                                        <h1 class="modal-title modal-title-style" align="center">REQUEST QUOTE</h1>
+                                                        <button type="button" class="btn btn-sm close no-border" data-dismiss="modal" aria-label="Close">
                                                             <span aria-hidden="true">&times;</span>
                                                         </button>
                                                     </div>
                                                     <div class="col-sm-6">
-                                                        <div class="" style="width: 470px; margin-top: 10px;" >
+                                                        <div class="modal-space-fit" >
                                                             <form action="{{ route('frontend.request-quote') }}" method="post" enctype="multipart/form-data">
                                                                 @csrf
                                                                 <div class="row">
@@ -230,7 +234,7 @@
                                                                     <textarea class="form-control" id="message" name="message" cols="40" rows="5" type="text" style=" height: 100px;" required> </textarea>
                                                                 </div>
                                                                 <div class="form-group">
-                                                                    <button class="btn btn-sm btn-warning" type="submit" style="float: left;margin-left: 70%; width: 120px; height: 30px; background-color: #FFA500; color: white;">Submit</button>
+                                                                    <button class="btn btn-sm btn-warning modal-button" type="submit" style="">Submit</button>
                                                                 </div>
                                                                 <div class="form-group">
                                                                     <label for="mandatory" style="font-size: 7pt; color: blue;"> &#42; <strong>mandatory</strong></label>
@@ -309,8 +313,8 @@
                                     <div class="form-group row">
                                         <table class="table table-responsive-sm table-bordered">
                                             <tbody>
-                                                <tr class="spacer" style="border: none;" valign="middle">
-                                                    <th class="align-middle" style="background-color:  #fbb03b; " rowspan="13" valign="middle">RTC 157</th>
+                                                <tr class="spacer no-border" valign="middle">
+                                                    <th class="align-middle lasindo-color" rowspan="13" valign="middle">RTC 157</th>
                                                     <th>Temperature range</th>
                                                     <td>-45 to 155°C / -49 to 311°F</td>
                                                 </tr>
@@ -363,8 +367,8 @@
                                     <div class="form-group row">
                                         <table class="table table-responsive-sm table-bordered">
                                             <tbody>
-                                                <tr class="spacer" style="border: none;" valign="middle">
-                                                    <th class="align-middle" style="background-color:  #fbb03b; " rowspan="16" valign="middle">RTC 158</th>
+                                                <tr class="spacer no-border" valign="middle">
+                                                    <th class="align-middle lasindo-color" rowspan="16" valign="middle">RTC 158</th>
                                                     <th>Temperature range</th>
                                                     <td>-22 to 155°C/-8 to 311°F</td>
                                                 </tr>
@@ -426,8 +430,8 @@
                                     <div class="form-group row">
                                         <table class="table table-responsive-sm table-bordered">
                                             <tbody>
-                                                <tr class="spacer" style="border: none;" valign="middle">
-                                                    <th class="align-middle" style="background-color:  #fbb03b; " rowspan="14" valign="middle">RTC 159</th>
+                                                <tr class="spacer no-border" valign="middle">
+                                                    <th class="align-middle lasindo-color" rowspan="14" valign="middle">RTC 159</th>
                                                     <th>Temperature range</th>
                                                     <td>-100 to 155°C / -148 to 311°F</td>
                                                 </tr>
@@ -480,8 +484,8 @@
                                     <div class="form-group row">
                                         <table class="table table-responsive-sm table-bordered">
                                             <tbody>
-                                                <tr class="spacer" style="border: none;" valign="middle">
-                                                    <th class="align-middle" style="background-color:  #fbb03b; " rowspan="15" valign="middle">RTC 250</th>
+                                                <tr class="spacer no-border" valign="middle">
+                                                    <th class="align-middle lasindo-color" rowspan="15" valign="middle">RTC 250</th>
                                                     <th>Temperature range</th>
                                                     <td>28 to 250°C/82 to 482°F</td>
                                                 </tr>
@@ -540,8 +544,8 @@
                                     <div class="form-group row">
                                         <table class="table table-responsive-sm table-bordered">
                                             <tbody>
-                                                <tr class="spacer" style="border: none;" valign="middle">
-                                                    <th class="align-middle" style="background-color:  #fbb03b; " rowspan="15" valign="middle">RTC 187</th>
+                                                <tr class="spacer no-border" valign="middle">
+                                                    <th class="align-middle lasindo-color" rowspan="15" valign="middle">RTC 187</th>
                                                     <th>Temperature range</th>
                                                     <td>-45 to 180° C/-49 to 356° F</td>
                                                 </tr>
@@ -597,8 +601,8 @@
                                     <div class="form-group row">
                                         <table class="table table-responsive-sm table-bordered">
                                             <tbody>
-                                                <tr class="spacer" style="border: none;" valign="middle">
-                                                    <th class="align-middle" style="background-color:  #fbb03b; width: 11%; " rowspan="15" valign="middle"></th>
+                                                <tr class="spacer no-border" valign="middle">
+                                                    <th class="align-middle lasindo-color table-lasindo-notitle" rowspan="15" valign="middle"></th>
                                                     <th>Temperature range</th>
                                                     <td>33 to 700°C/91 to 1292°F</td>
                                                 </tr>
@@ -651,70 +655,70 @@
                                 </div>
                             </div>
                             <div class="brand-name filter-download">
-                                <div class="col-lg-12" style="margin-left: 15%; margin-bottom: 10%;">
+                                <div class="col-lg-12 content-lg-space">
                                     
-                                    <div class="form-group row" style="margin-bottom: 0%;">
-                                        <button class="btn btn-lg btn-warning" style="background-color: #fbb03b; color: white; padding-right: 700px;"  type="button"><i class="fas fa-caret-down" style="font-size: 25px;"></i>  Brochur</button>
+                                    <div class="form-group row no-margin-bottom">
+                                        <div class="tab-download-label"  ><i class="fas fa-caret-down" style="font-size: 25px;"></i>  Brochur</div>
                                     </div>
                                     <div class="form-group row">
                                         <ul style="list-style-type:none; margin-top: 2%;">
-                                            <li><a href="{{ asset('storage/files/Ametek_Calibration_Overview_Brochure.pdf')}}" style="font-size: 15pt; color: black;" download><i class="far fa-file-alt"></i> Temperatur Calibrator Overview</li>
-                                            <li><a href="{{ asset('storage/files/Temperature_Calibrator_Overview.pdf')}}" style="font-size: 15pt; color: black;" download><i class="far fa-file-alt"></i> Ametek Calibrator Overview Brochure</a></li>
+                                            <li><a href="{{ asset('storage/files/Ametek_Calibration_Overview_Brochure.pdf')}}" class="tab-download-a" download><i class="far fa-file-alt"></i> Temperatur Calibrator Overview</li>
+                                            <li><a href="{{ asset('storage/files/Temperature_Calibrator_Overview.pdf')}}" class="tab-download-a" download><i class="far fa-file-alt"></i> Ametek Calibrator Overview Brochure</a></li>
                                         </ul> 
                                     </div>
 
                                     <div class="form-group row" style="margin-bottom: 0%">
-                                        <button class="btn btn-lg btn-warning" style="background-color: #fbb03b; color: white; padding-right: 700px;"  type="button"><i class="fas fa-caret-down" style="font-size: 25px;"></i>  Datasheet</button>
+                                        <div class="tab-download-label"><i class="fas fa-caret-down" style="font-size: 25px;"></i>  Datasheet</div>
                                     </div>
                                     <div class="form-group row">
-                                        <ul style="list-style-type:none; margin-top: 2%;">
-                                            <li><a href="{{ asset('storage/files/RTC/RTC_700_Datasheet.pdf')}}" style="font-size: 15pt; color: black;" download><i class="far fa-file-alt"></i>  RTC 700 Datasheet</li>
-                                            <li><a href="{{ asset('storage/files/RTC/RTC_156-157_Datasheet.pdf')}}" style="font-size: 15pt; color: black;" download><i class="far fa-file-alt"></i>  RTC 156/157 Datasheet</li>
-                                            <li><a href="{{ asset('storage/files/RTC/RTC_158-250_Datasheet.pdf')}}" style="font-size: 15pt; color: black;" download><i class="far fa-file-alt"></i>  RTC 158/250 Datasheet</li>
-                                            <li><a href="{{ asset('storage/files/RTC/RTC_159_Datasheet.pdf')}}" style="font-size: 15pt; color: black;" download><i class="far fa-file-alt"></i>  RTC 159 Datasheet</li>
-                                            <li><a href="{{ asset('storage/files/RTC/RTC_187_Datasheet.pdf')}}" style="font-size: 15pt; color: black;" download><i class="far fa-file-alt"></i>  RTC 187 Datasheet</li>
-                                            <li><a href="{{ asset('storage/files/DLC_Datasheet.pdf')}}" style="font-size: 15pt; color: black;" download><i class="far fa-file-alt"></i>  DLC Datasheet</a></li>                  
+                                        <ul class="tab-download-ul">
+                                            <li><a href="{{ asset('storage/files/RTC/RTC_700_Datasheet.pdf')}}" class="tab-download-a" download><i class="far fa-file-alt"></i>  RTC 700 Datasheet</a></li>
+                                            <li><a href="{{ asset('storage/files/RTC/RTC_156-157_Datasheet.pdf')}}" class="tab-download-a" download><i class="far fa-file-alt"></i>  RTC 156/157 Datasheet</a></li>
+                                            <li><a href="{{ asset('storage/files/RTC/RTC_158-250_Datasheet.pdf')}}" class="tab-download-a" download><i class="far fa-file-alt"></i>  RTC 158/250 Datasheet</a></li>
+                                            <li><a href="{{ asset('storage/files/RTC/RTC_159_Datasheet.pdf')}}" class="tab-download-a" download><i class="far fa-file-alt"></i>  RTC 159 Datasheet</a></li>
+                                            <li><a href="{{ asset('storage/files/RTC/RTC_187_Datasheet.pdf')}}" class="tab-download-a" download><i class="far fa-file-alt"></i>  RTC 187 Datasheet</a></li>
+                                            <li><a href="{{ asset('storage/files/DLC_Datasheet.pdf')}}" class="tab-download-a" download><i class="far fa-file-alt"></i>  DLC Datasheet</a></li>                  
                                         </ul> 
                                     </div>
 
                                     <div class="form-group row" style="margin-bottom: 0%">
-                                        <button class="btn btn-lg btn-warning" style="background-color: #fbb03b; color: white; padding-right: 700px;"  type="button"><i class="fas fa-caret-down" style="font-size: 25px;"></i>  Manual</button>
+                                        <div class="tab-download-label"><i class="fas fa-caret-down" style="font-size: 25px;"></i>  Manual</div>
                                     </div>
                                     <div class="form-group row">
                                         <ul style="list-style-type:none; margin-top: 2%;">
-                                            <li><a href="{{ asset('storage/files/RTC/RTC_User_Manual.pdf')}}" style="font-size: 15pt; color: black;" download><i class="far fa-file-alt"></i>  RTC User Manual</li>
-                                            <li><a href="{{ asset('storage/files/RTC/RTC_Reference_Manual.pdf')}}" style="font-size: 15pt; color: black;" download><i class="far fa-file-alt"></i>  RTC Reference Manual</li>
-                                            <li><a href="{{ asset('storage/files/JOFRACAL_User_Manual.pdf')}}" style="font-size: 15pt; color: black;" download><i class="far fa-file-alt"></i>  JofraCal User Manual Temperature</li>
+                                            <li><a href="{{ asset('storage/files/RTC/RTC_User_Manual.pdf')}}" class="tab-download-a" download><i class="far fa-file-alt"></i>  RTC User Manual</a></li>
+                                            <li><a href="{{ asset('storage/files/RTC/RTC_Reference_Manual.pdf')}}" class="tab-download-a" download><i class="far fa-file-alt"></i>  RTC Reference Manual</a></li>
+                                            <li><a href="{{ asset('storage/files/JOFRACAL_User_Manual.pdf')}}" class="tab-download-a" download><i class="far fa-file-alt"></i>  JofraCal User Manual Temperature</a></li>
                                             <!--<li><a href="{{ asset('storage/files/DLC_Datasheet.pdf')}}" style="font-size: 15pt; color: black;" download><i class="far fa-file-alt"></i>  DLC User Manual</li>-->
-                                            <li><a href="{{ asset('storage/files/Ametrim_User_Manual.pdf')}}" style="font-size: 15pt; color: black;" download><i class="far fa-file-alt"></i>  Ametrim User Manual</li>
+                                            <li><a href="{{ asset('storage/files/Ametrim_User_Manual.pdf')}}" class="tab-download-a" download><i class="far fa-file-alt"></i>  Ametrim User Manual</a></li>
                                         </ul> 
                                     </div>
 
                                 </div>
                             </div>
-                            <div class="row to-be-filtered filter-video" style="margin-top: 5%; margin-left: 9%">
-                                <div class="col-lg-6">
-                                    <div class="form-group row">
-                                        <iframe width="420" height="315" src="https://www.youtube.com/embed/1m_hnKLoNs8"></iframe>
+                            <div class="content-space2 to-be-filtered filter-video tab-video-center" >
+                                <div class="col-sm-6">
+                                    <div class="form-group content-space2"  >
+                                        <iframe width="360" height="197" src="https://www.youtube.com/embed/1m_hnKLoNs8"></iframe>
                                     </div>
                                 </div>
-                                <div class="col-lg-6">
-                                    <div class="form-group row">
-                                        <iframe width="420" height="315"
+                                <div class="col-sm-6">
+                                    <div class="form-group content-space2" > 
+                                        <iframe width="360" height="197"
                                                 src="https://www.youtube.com/embed/GG4iDoRqiRU" frameborder="0" allowfullscreen>
                                         </iframe>                                    
                                     </div>
                                 </div>
-                                <div class="col-lg-6">
-                                    <div class="form-group row">
-                                        <iframe width="420" height="315"
+                                <div class="col-sm-6">
+                                    <div class="form-group content-space2" >
+                                        <iframe width="360" height="197"
                                                 src="https://www.youtube.com/embed/0pTlN-10ULE" frameborder="0" allowfullscreen>
                                         </iframe>                                    
                                     </div>
                                 </div>
-                                <div class="col-lg-6">
-                                    <div class="form-group row">
-                                        <iframe width="420" height="315"
+                                <div class="col-sm-6">
+                                    <div class="form-group content-space2" >
+                                        <iframe width="360" height="197"
                                                 src="https://www.youtube.com/embed/x7gyu4l9GUo" frameborder="0" allowfullscreen>
                                         </iframe>                                    
                                     </div>
