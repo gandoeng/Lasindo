@@ -14,7 +14,7 @@
 						<div class="form-group row">
 							<label class="col-md-3 col-form-label" for="hf-email">Email Admin</label>
 							<div class="col-md-9">
-								<input class="form-control" id="adminEmail" type="email" name="adminEmail" value="{{$d1->email}}">	
+								<input class="form-control" id="adminEmail" type="email" name="adminEmail" value="{{$d1->value}}">	
 							</div>
 						</div>
 					@endforeach
@@ -22,7 +22,7 @@
 						<div class="form-group row">
 							<label class="col-md-3 col-form-label" for="hf-email">Email Product</label>
 							<div class="col-md-9">
-								<input class="form-control" id="productEmail" type="email" name="productEmail" value="{{$d2->email}}">	
+								<input class="form-control" id="productEmail" type="email" name="productEmail" value="{{$d2->value}}">	
 							</div>
 						</div>
 					@endforeach

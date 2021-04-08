@@ -181,6 +181,49 @@ $(document).ready(function(){
     
 });
 
+$(document).ready(function(){
+    var brandIsotope = $('#brand-label').isotope({
+        itemSelector: '.brand-name-label,.brand-desc-label,.to-be-filtered-label',
+        layoutMode: 'vertical'
+    });
+             
+    if (mq1024.matches){
+        $(".brands-label .slick-track-label").addClass("d-flex");
+        $(".brands-label .cat-brand-label.slick-slide-label").addClass("m-auto");
+        
+        $(document).on('click','.slick-next-label, .slick-prev-label', function() {
+            $(".brands-label .cat-brand-label").removeClass('active');
+            $(".brands-label .cat-brand-label.slick-current-label").addClass('active');
+
+            brandIsotope.isotope({
+                filter: $('.brands-label .cat-brand-label.active').data('filter')
+            });
+        });
+    } else {
+        brandIsotope.isotope({
+            filter: $('.brands-label .cat-brand-label.active').data('filter')
+        });
+    }
+    $(document).on('click','.brands-label .cat-brand-label', function() {            
+        if (mq1024.matches){
+            $("brands-label .cat-brand-label").removeClass('active');
+            $("brands-label .cat-brand-label.slick-current-label").addClass('active');
+        
+            brandIsotope.isotope({
+                filter: $(this).data('filter')
+            });
+        } else {
+            $(".brands-label-label .cat-brand-label").removeClass('active');
+            $(this).addClass('active');
+        
+            brandIsotope.isotope({
+                filter: $(this).data('filter')
+            });
+        }
+    });
+    
+});
+
 
 // Carousel delay
 $('.carousel').carousel({

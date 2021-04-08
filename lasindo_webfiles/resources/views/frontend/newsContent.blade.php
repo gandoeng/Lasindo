@@ -49,8 +49,8 @@
                     </div>
 
                     <div class="col-lg-12">
-                        <div class="form-group row" style="margin-bottom: 0%; margin-top: 0%;">
-                                <p class="limit-text" style="display: block; overflow: hidden; font-size: 20pt; text-align: justify;">
+                        <div class="form-group row lighter-text" style="margin-bottom: 0%; margin-top: 0%;">
+                                <p class="limit-text" style="display: block; overflow: hidden; font-size: 20pt; text-align: justify; font-family: sans-serif; font-weight: lighter;">
                                     <?= str_replace('"', ' ',$p -> newsContent)?>
                                 </p>
                             </div>

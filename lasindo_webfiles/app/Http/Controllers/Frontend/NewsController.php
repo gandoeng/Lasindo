@@ -8,6 +8,7 @@ use App\Models\Backend\Brands;
 use App\Models\Backend\SlideBanners;
 use App\Models\Backend\ShowBanner;
 use App\Models\Backend\ShowProduct;
+use App\Models\Frontend\News;
 use DB;
 
 class NewsController extends Controller
@@ -30,8 +31,10 @@ class NewsController extends Controller
             'show'      => $showcase,
         ];
 
-        $news = DB::table('news')->get();
-        return view('frontend.news', $rows)->with('news',$news);
+        $news = News::paginate(3);
+
+        //$news = DB::table('news')->get()->paginate(3);
+        return view('frontend.news', $rows, compact('news'));
     }
 
     public function newsPage($id){

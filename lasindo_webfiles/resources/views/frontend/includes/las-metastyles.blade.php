@@ -18,10 +18,10 @@
 <link rel="stylesheet" href="{{ url('maintheme/assets/css/fonts/fonts.css') }}">
 <link rel="stylesheet" href="{{ url('maintheme/assets/css/fonts/icons/style.css') }}">
 <link rel="stylesheet" href="{{ url('maintheme/assets/css/animate.min.css') }}">
-<link rel="stylesheet" href="{{ url('maintheme/assets/css/main.css?v=').date("his") }}">
-<link rel="stylesheet" href="{{ url('maintheme/assets/css/main-smaller.css?v=').date("his") }}">
 <link rel="stylesheet" href="{{ url('maintheme/assets/libs/toastr/toastr.min.css') }}"/>
 <link rel="stylesheet" href="{{ url('maintheme/assets/libs/slick-1.8.1/slick/slick.css') }}">
 <link rel="stylesheet" href="{{ url('maintheme/assets/libs/slick-1.8.1/slick/slick-theme.css') }}">
-<link href="{{ mix('css/frontend.css') }}" rel="stylesheet">
+<link rel="stylesheet" href="{{ url('maintheme/assets/css/main.css?v=').date("his") }}">
+<link rel="stylesheet" href="{{ url('maintheme/assets/css/main-smaller.css?v=').date("his") }}">
+
 

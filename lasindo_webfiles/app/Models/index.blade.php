@@ -145,65 +145,36 @@
                                             <div class="col-md-6">                                                
                                             @endif
                                                 <div class="the-products margin-left-title">
-                                                    @if($p->abbreviation == null)
-                                                    <div class="d-flex {{$p->layout=='sidebyside' ? 'image' : ''}} flow-img-size" style="margin-left: 10%;" >
+                                                    <!--<h4>{{$p->name}}</h4>-->
+                                                    <div class="d-flex {{$p->layout=='sidebyside' ? 'image' : ''}} flow-img-size" >
                                                         <img src="{{$p->image}}" class="m-auto img-follow" alt="{{$p->name}}">
                                                     </div>
-                                                    @endif
-                                                    <!--<h4>{{$p->name}}</h4>-->
                                                     @if($p->fullName == null)
 
                                                     <p class="flow-name"><strong> {{$p->name}}</strong></p>
 
                                                     @else
 
+                                                    <h4 class="flow-abbreviation">{{$p->abbreviation}}</h4>
+
                                                     @if($p->abbreviation == 'RTC')
-                                                    <div class="d-flex {{$p->layout=='sidebyside' ? 'image' : ''}} flow-img-size" style="margin-left: 10%;" >
-                                                        <a href="{{route('frontend.RTC.RTC','temperature')}}">
-                                                        <img src="{{$p->image}}" class="m-auto img-follow" alt="{{$p->name}}"></a>
-                                                    </div>
-                                                    <a style="margin-left: 100pt;" href="{{route('frontend.RTC.RTC','temperature')}}" class="flow-abbreviation flow-title">{{$p->abbreviation}}</a>
-                                                    <p class="index-title-a" style=""> {{$p->fullName}}</p>
-
+                                                    <a href="{{route('frontend.RTC.RTC','temperature')}}" class="index-title-a" style=""> {{$p->fullName}}</a>
                                                     @elseif($p->abbreviation == 'PTC')
-                                                    <div class="d-flex {{$p->layout=='sidebyside' ? 'image' : ''}} flow-img-size"  style="margin-left: 10%;">
-                                                        <a href="{{route('frontend.PTC.PTC','temperature')}}">
-                                                        <img src="{{$p->image}}" class="m-auto img-follow" alt="{{$p->name}}"></a>
-                                                    </div>
-                                                    <a style="margin-left: 100pt;" href="{{route('frontend.PTC.PTC','temperature')}}" class="flow-abbreviation flow-title">{{$p->abbreviation}}</a>
-                                                    <p  class="index-title-a"> {{$p->fullName}}</p>
-
+                                                    <a href="{{route('frontend.PTC.PTC','temperature')}}" class="index-title-a"> {{$p->fullName}}</a>
                                                     @elseif($p->abbreviation == 'CTC')
-                                                    <div class="d-flex {{$p->layout=='sidebyside' ? 'image' : ''}} flow-img-size"  style="margin-left: 10%;">
-                                                        <a href="{{route('frontend.CTC.CTC','temperature')}}">
-                                                        <img src="{{$p->image}}" class="m-auto img-follow" alt="{{$p->name}}"></a>
-                                                    </div>
-                                                    <a style="margin-left: 100pt;" href="{{route('frontend.CTC.CTC','temperature')}}" class="flow-abbreviation flow-title">{{$p->abbreviation}}</a>
-                                                    <p class="index-title-a"> {{$p->fullName}}</p>
-
+                                                    <a href="{{route('frontend.CTC.CTC','temperature')}}" class="index-title-a"> {{$p->fullName}}</a>
                                                     @elseif($p->abbreviation == 'MTC')
-                                                    <div class="d-flex {{$p->layout=='sidebyside' ? 'image' : ''}} flow-img-size"  style="margin-left: 10%;" >
-                                                        <a href="{{route('frontend.MTC.MTC','temperature')}}">
-                                                        <img src="{{$p->image}}" class="m-auto img-follow" alt="{{$p->name}}">
-                                                    </div>
-                                                    <a style="margin-left: 100pt;" href="{{route('frontend.MTC.MTC','temperature')}}" class="flow-abbreviation flow-title">{{$p->abbreviation}}</a>
-                                                    <p class="index-title-a"> {{$p->fullName}}</p>
-
+                                                    <a href="{{route('frontend.MTC.MTC','temperature')}}" class="index-title-a"> {{$p->fullName}}</a>
                                                     @elseif($p->abbreviation == 'ETC')
-                                                    <div class="d-flex {{$p->layout=='sidebyside' ? 'image' : ''}} flow-img-size"  style="margin-left: 10%;">
-                                                        <a href="{{route('frontend.ETC.ETC','temperature')}}">
-                                                        <img src="{{$p->image}}" class="m-auto img-follow" alt="{{$p->name}}">
-                                                    </div>
-                                                    <a style="margin-left: 100pt;" href="{{route('frontend.ETC.ETC','temperature')}}"class="flow-abbreviation flow-title">{{$p->abbreviation}}</a>
-                                                    <p class="index-title-a"> {{$p->fullName}}</p>
+                                                    <a href="{{route('frontend.ETC.ETC','temperature')}}" class="index-title-a"> {{$p->fullName}}</a>
                                                     @else
                                                     <a href="#" class="index-title-a"> {{$p->fullName}}</a>
                                                     @endif
 
                                                     @endif
                                                 </div>
-                                                    <form style="padding-top: 30px;">
-                                                        <button class="btn btn-pill btn-warning button-flow-lasindo" type="button" data-toggle="modal" data-target="#edit-modal"><span class="label-name-position-flow">Request Quote</span> </button>
+                                                    <form style="padding-top: 70px;">
+                                                        <button class="btn btn-pill btn-warning button-flow-lasindo" type="button"  data-toggle="modal" data-target="#edit-modal"><span class="label-name-position-flow">Request Quote</span> </button>
                                                     </form>
                                                     <div class="modal fade" id="edit-modal">
                                                             <div class="modal-dialog">

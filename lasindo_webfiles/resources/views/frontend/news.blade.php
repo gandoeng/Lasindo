@@ -11,7 +11,7 @@
             </ol>
             <div class="carousel-inner">
                 @foreach ($slides as $key=>$slide)
-                <div class="carousel-item header {{$key == 0 ? 'active' : '' }}" style="background-image: url({{ $slide->image }});background-position: top;">
+                <div class="carousel-item header {{$key == 0 ? 'active' : '' }}" style="background-image: url({{ $slide->image }}); background-position: top;">
                     <div class="d-flex">
                         <div class="container">
                             <div class="d-block position-absolute small-device-wrapper" style="top:43%">
@@ -37,22 +37,22 @@
         		<div class="row"> 
                     @foreach($news as $n)
                     @if( $n->newsPublice == 'set')
-        			<div class="row border border-dark" style="margin-top: 5%; margin-left: 9%">
+        			<div class="row border border-dark news-margin">
                         <div class="col-lg-6" style="padding-left: 0%;">
-                                <img style="height: 100%; width: 100%; margin: auto; display: block;" src="{{ asset('storage/photos/'.$n->newsImage)}}">
+                                <img class="news-image-size" src="{{ asset('storage/photos/newsPhotos/'.$n->newsImage)}}">
                         </div>
                         <div class="col-lg-6">
-                            <div class="form-group row" style="margin-bottom: 0%;">
-                                <h2>{{$n->title}}</h2>
+                            <div class="form-group row news-title">
+                                <h5><strong>{{$n->title}}</strong></h5>
                             </div>
-                            <div class="form-group row" style="margin-bottom: 0%; margin-top: 0%;">
-                                <p class="limit-text" style="display: block; overflow: hidden; font-size: 16pt; text-align: justify;" maxlength="50"> 
+                            <div class="form-group row no-margin-bottom no-margin-top news-content-position">
+                                <p class="limit-text news-limit-content"> 
                                     <?= str_replace('"', ' ',substr(strip_tags($n->newsContent),0,250))?>
                                 </p>
                             </div>
-                            <div class="form-group row">
+                            <div class="form-group row no-margin-bottom news-button-position">
                                 <form action="{{route('frontend.news.page',array($n->id))}}" method="get" enctype="multipart/form-data">
-                                    <button class="btn btn-pill btn-warning" type="submit" style="float: left; margin-left: 150%; width: 200px; height: 50px; background-color: #fbb03b; color: white;">Read More!</button>
+                                    <button class="btn btn-pill btn-warning news-button-style" type="submit">Read More!</button>
                                 </form>
                             </div>
                         </div>
@@ -60,6 +60,13 @@
                     @endif
                     @endforeach
         		</div>
+                <div class="row">
+                    <div class="d-flex justify-content-center">
+                        <div class="col news-pagenation-position">
+                            {!! $news->links() !!}
+                        </div>
+                    </div>
+                </div>
         	</div>
         </div>
 	</main>

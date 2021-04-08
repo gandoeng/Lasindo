@@ -18,8 +18,8 @@
 					<tbody>
 						@foreach($email as $e)
 						<tr>
-							<td>{{ $e->ListEmail }}</td>
-							<td>{{ $e->email }}</span></td>
+							<td>{{ $e->label }}</td>
+							<td>{{ $e->value }}</span></td>
 						</tr>
 						@endforeach
 					</tbody>

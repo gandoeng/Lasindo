@@ -369,6 +369,7 @@ body {
                             &:hover{cursor: pointer;transform: scale3d(1.05,1.05,1)}
                         }
                         &.active{
+                            position:relative;
                             transition: all .3s ease-in-out;
                             &::after{
                                 position: absolute;
@@ -398,18 +399,65 @@ body {
                         }
                     }
                 }
-                .cat-name2 {
+                .brand-name {
+                    padding-top: 3rem;
+                    h2 {color: var(--black);font: bolder 2.5rem/3rem 'Ubuntu';}
+                }
+                .brand-desc {padding-top: .5rem; font-weight: normal;}
+                .the-products {
+                    padding-top: 2.5rem;
+                    h4 {color: var(--black);font-family: 'Ubuntu',sans-serif; font-weight: bold;}
+                    .image {
+                        padding: 1rem;
+                    }
+                    .desc {
+                        font-weight: normal;
+                        ul {
+                            padding-inline-start: 20px;
+                        }
+                    }
+                }
+                .epc {
+                    padding: 3rem 1rem;
+                    position: relative;
+                    &::after {
+                        position: absolute;
+                        bottom: 0;
+                        border: thin dashed #1A1A1A;
+                        width: 100%;
+                        content: '';
+                    }
+                    .special-image {
+                        position: relative;
+                        img {transition: all .3s ease-in-out;border-radius: 5px;}
+                        &:hover {
+                            img {filter: brightness(80%);}
+                        }
+                    }
+                }
+            }
+            .detail-category {
+                .cat-name-label {
                     padding: 0 0 2rem;
                     position: relative;
+
+                    &.cat-name-auto-label {
+                        &:after {
+                            width:400px;
+                                width: 60%;
+                                left: 0;
+                                right: 0;
+                                margin: auto;
+                        }
+                    }
                     &::after {
                         position: absolute;
                         bottom: 0;
                         border: thin solid #000;
                         width: 100%;
                         content: '';
-                        margin-left: 0%;
                     }
-                    .catname2 {
+                    .catname-label {
                         position: relative;
                         width: 100%;
                         height: 70px;
@@ -437,7 +485,7 @@ body {
                             //color: black;
                         }
                     }
-                    .cat-brand2 {
+                    .cat-brand-label {
                         img {
                             width: 150px;
                             height: auto;
@@ -445,6 +493,7 @@ body {
                             &:hover{cursor: pointer;transform: scale3d(1.05,1.05,1)}
                         }
                         &.active{
+                            position:relative;
                             transition: all .3s ease-in-out;
                             &::after{
                                 position: absolute;
@@ -463,7 +512,7 @@ body {
                     &.special::after{
                         display: none;
                     }
-                    .m-brands2 {
+                    .m-brands-label {
                         @media only screen and (min-width: 320px) and (max-width: 767px) {
                             .slick-prev {left:15px; z-index: 2;}
                             .slick-next {right:15px; z-index: 2;}
@@ -474,12 +523,12 @@ body {
                         }
                     }
                 }
-                .brand-name {
+                .brand-name-label {
                     padding-top: 3rem;
                     h2 {color: var(--black);font: bolder 2.5rem/3rem 'Ubuntu';}
                 }
-                .brand-desc {padding-top: .5rem; font-weight: normal;}
-                .the-products {
+                .brand-desc-label {padding-top: .5rem; font-weight: normal;}
+                .the-products-label {
                     padding-top: 2.5rem;
                     h4 {color: var(--black);font-family: 'Ubuntu',sans-serif; font-weight: bold;}
                     .image {
@@ -663,6 +712,7 @@ body {
 .hover-menu{
     font-family: 'Lasindo', sans-serif;
     font-size: 12pt;
+
     h5:hover{
         color:#fbb03b;
         cursor: pointer;
@@ -693,7 +743,7 @@ body {
 
 
 .content-lg-space{
-    margin-left: 60%; 
+    margin-left: 50%; 
     margin-bottom: 10%;
 }
 
@@ -709,6 +759,16 @@ body {
     height: 50px;
     float: left; 
     margin-left: 37%; 
+}
+
+.button-flow-lasindo{
+    background-color: #fbb03b; 
+    color: white;
+    width: 150px; 
+    height: 30px;
+    float: left; 
+    margin-left: 90px; 
+    margin-top: 22px;
 }
 
 .modal-title-style{
@@ -746,6 +806,7 @@ body {
    color: white; 
    padding-right: 420px;
    border: none;
+   display: block;
 }
 
 .tab-download-i{
@@ -776,5 +837,176 @@ body {
     font-family: 'Lasindo', sans-serif;
     p{
         margin-bottom: 0pt;
+    }
+}
+
+.margin-left-25{
+    margin-left: 25%;
+}
+
+.margin-left-20{
+    margin-left: 20%;
+}
+
+.font-25{
+    font-size: 25pt;
+}
+
+.font-12{
+    font-size: 12pt;
+}
+
+.index-title-a{
+     margin-bottom: 0; 
+     float: left; margin-left: 
+     0%; text-align: center; 
+     font-size: 12pt; width: 100%; 
+     font-size: 12pt; 
+     height: 20px; 
+     color: black;
+     font-family: sans-serif;
+}
+
+.font-sans{
+    font-family: sans-serif;
+}
+
+td{
+    font-family: sans-serif;
+}
+
+.text-mandatory{
+    font-size: 7pt; 
+    content: blue;
+}
+
+.margin-left-12{
+    margin-left:12pt;
+    #text{
+        margin-bottom: 12pt;
+    }
+}
+
+.i-download-label{
+    margin-top: 2pt; 
+    position: relative; 
+    top: 5px;
+}
+
+.label-name-position{
+    position: relative; 
+    margin-bottom: 12pt; 
+    margin-left:3pt
+}
+
+.label-name-position-flow{
+    position: relative; 
+    margin-bottom: 12pt; 
+    margin-left:3pt;
+    bottom:5px;
+}
+
+.lighter-text{
+    p{
+        font-weight: lighter;
+    }
+}
+
+.flow-img-size{
+    width: 400px; 
+    height: 150px;
+}
+
+.img-follow{
+    max-width: 100%; 
+    max-height: 100%; 
+    float: left; 
+    margin-left: 100%;
+}
+
+.flow-name{
+    margin-top: 7px; 
+    margin-bottom: 0; 
+    float: left;font-size: 12pt; 
+    width: 100%; 
+    font-size: 12pt; 
+    height: 20px; 
+    text-align: center;
+}
+
+.flow-abbreviation{
+    float: left; 
+    margin-left: 50%;
+}
+
+.news-margin{
+    margin-top: 5%; 
+    margin-left: 9%;
+}
+
+.news-image-size{
+    height: 100%; 
+    width: 100%; 
+    margin: auto; 
+    display: block;
+}
+
+.news-title{
+    margin-bottom: 0%; 
+    margin-top: 10%; 
+    right: 0px; 
+    left: 0px; 
+    margin-right: 5%; 
+    margin-left: 5%;
+}
+
+.news-content-position{
+    right: 0px; 
+    left: 0px; 
+    margin-right: 5%; 
+    margin-left: 5%;
+}
+
+.news-limit-content{
+    display: block; 
+    overflow: hidden; 
+    font-size: 12pt; 
+    text-align: justify; 
+    font-family: 'Lasindo', sans-serif; 
+    font-weight: lighter;
+}
+
+.news-button-position{
+    position: relative; 
+    margin-bottom: 10px;
+}
+
+.news-button-style{
+    float: left; 
+    margin-left: 150%; 
+    width: 200px; 
+    height: 50px; 
+    background-color: #fbb03b; 
+    color: white; 
+    position: relative;
+}
+
+.news-pagenation-position{
+    margin-top: 20px; 
+    position: relative; 
+    left: 0; 
+    right: 0; 
+    margin-left: 600%;
+}
+
+.flow-title{
+    color: black;
+    font-size: 18pt;
+}
+
+.margin-left-title{
+    a{
+        margin-left: 20px;
+
     }
 }

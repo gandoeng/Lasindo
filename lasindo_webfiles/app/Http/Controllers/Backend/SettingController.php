@@ -15,8 +15,8 @@ class SettingController extends Controller
     }
 
     public function updateEmail(Request $request){
-        $data1 = DB::table('email_reciver')->where('id','=','1')->get();
-        $data2 = DB::table('email_reciver')->where('id','=','2')->get();
+        $data1 = DB::table('settings')->where('id','=','1')->get();
+        $data2 = DB::table('settings')->where('id','=','2')->get();
 
         return view('backend.setting.updateEmail')->with('data1',$data1)->with('data2',$data2);
     }
@@ -28,8 +28,8 @@ class SettingController extends Controller
         //$data2 = DB::table('email_reciver')->where('id','=','2')->get();
 
 
-        DB::table('email_reciver')->where('id','=',1)->update(array('email' => $admin));
-        DB::table('email_reciver')->where('id','=',2)->update(array('email' => $product));
+        DB::table('settings')->where('id','=',1)->update(array('value' => $admin));
+        DB::table('settings')->where('id','=',2)->update(array('value' => $product));
 
         return redirect()->route('admin.setting');
     }

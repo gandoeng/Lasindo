@@ -23,7 +23,7 @@ class DashboardController extends Controller
 
     
     public function setting(){
-        $email = DB::table('email_reciver')->get();
+        $email = DB::table('settings')->get();
         return view('backend.setting.email-configure')->with('email',$email);
     }
 

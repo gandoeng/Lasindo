@@ -98,12 +98,12 @@
                 
                 <div class="row detail-category">
                     <div class="col-12 category-item">
-                        <div class="cat-name">
-                            <div class="catname">
+                        <div class="cat-name-label">
+                            <div class="catname-label">
                                 <h4>{{getSectionFullName()}} Measurement</h4>
                             </div>
                             <div class="ml-0 mr-0">
-                                <div class="row brands2">
+                                <div class="d-flex brands-label">
                                     @php 
                                         $count = 0;
                                         foreach ($brandsec as $brs) {
@@ -111,11 +111,21 @@
                                                 $count = $count+1;
                                                 foreach ($brands->where('name',$brs->brandsec) as $br) {
                                     @endphp
-                                            <div class="col p-2 d-flex {{$count==1 ? 'active' : '' }} active">
+                                            @if($count == 1)
+                                            <div class="p-2 d-flex cat-brand-label active">
+                                                <div class="align-self-center m-auto">
+                                                    <a href="{{url('/products/temperature#products-sect')}}">
+                                                    <img src="{{$br->image}}" alt="{{$count.$brs->section}}-{{$brs->brandsec}}"></a>
+                                                </div>
+                                            </div>
+                                            @else
+                                            <div class="p-2 d-flex">
                                                 <div class="align-self-center m-auto">
                                                     <img src="{{$br->image}}" alt="{{$count.$brs->section}}-{{$brs->brandsec}}">
                                                 </div>
                                             </div>
+                                            @endif
+
                                     @php
                                                 }
                                             }
@@ -130,27 +140,27 @@
                                 </div>
                             </div>
                         <div class="cat-name cat-name-auto">
-                            <div class="col-6 category-item" style="margin-left: 25%;">
+                            <div class="col-6 category-item margin-left-25">
                                 <div class="ml-0 mr-0">
                                 <div class="row brands no-margin">
-                                    <div class="col p-2 d-flex cat-brand active nav"  data-filter=".filter-overview" >
-                                        <div class="align-self-center m-auto hover-overlay hover-menu">
-                                            <h5 class="hover-menu">Overview</h5>
+                                    <div class="col p-2 d-flex cat-brand active nav hover-menu"  data-filter=".filter-overview" >
+                                        <div class="align-self-center m-auto hover-overlay">
+                                            <h5 class="font-12">Overview</h5>
                                         </div>
                                     </div>
-                                    <div class="col p-2 d-flex cat-brand nav" data-filter=".filter-spesification" >
-                                        <div class="align-self-center m-auto hover-menu">
-                                            <h5>Spesification</h5>
+                                    <div class="col p-2 d-flex cat-brand nav hover-menu" data-filter=".filter-spesification" >
+                                        <div class="align-self-center m-auto hover-overlay">
+                                            <h5 class="font-12">Spesification</h5>
                                         </div>
                                     </div>
                                     <div class="col p-2 d-flex cat-brand nav hover-menu"  data-filter=".filter-download" >
-                                        <div class="align-self-center m-auto">
-                                            <h5>Download</h5>
+                                        <div class="align-self-center m-auto hover-overlay ">
+                                            <h5 class="font-12">Download</h5>
                                         </div>
                                     </div>
                                     <div class="col p-2 d-flex cat-brand nav hover-menu" data-filter=".filter-video">
-                                        <div class="align-self-center m-auto">
-                                            <h5>Video</h5>
+                                        <div class="align-self-center m-auto hover-overlay">
+                                            <h5 class="font-12">Video</h5>
                                         </div>
                                     </div>
                                 </div>
@@ -205,39 +215,39 @@
                                                                 @csrf
                                                                 <div class="row">
                                                                     <div class="form-group col-sm-6">
-                                                                        <label for="firstName">First Name &#42;</label>
+                                                                        <label for="firstName" class="font-sans">First Name &#42;</label>
                                                                         <input class="form-control" id="firstName" name="firstName" type="text" required>
                                                                     </div>
                                                                     <div class="form-group col-sm-6">
-                                                                        <label for="lastName">Last Name &#42;</label>
+                                                                        <label for="lastName" class="font-sans">Last Name &#42;</label>
                                                                         <input class="form-control" id="lastName" name="lastName" type="text">
                                                                     </div>
                                                                     <div class="form-group col-sm-6">
-                                                                        <label for="company">Company/Organization &#42;</label>
+                                                                        <label for="company" class="font-sans">Company/Organization &#42;</label>
                                                                         <input class="form-control" id="company" name="company" type="text" required>
                                                                     </div>
                                                                     <div class="form-group col-sm-6">
-                                                                        <label for="country">Country &#42;</label>
+                                                                        <label for="country" class="font-sans">Country &#42;</label>
                                                                         <input class="form-control" id="country" name="country" type="text" required>
                                                                     </div>
                                                                     <div class="form-group col-sm-6">
-                                                                        <label for="email">Email &#42;</label>
+                                                                        <label for="email" class="font-sans">Email &#42;</label>
                                                                         <input class="form-control" id="email" name="email" type="email">
                                                                     </div>
                                                                     <div class="form-group col-sm-6">
-                                                                        <label for="postal-code">Phone &#42;</label>
+                                                                        <label for="postal-code" class="font-sans">Phone &#42;</label>
                                                                         <input class="form-control" id="phone" name="phone" type="text" required>
                                                                     </div>
                                                                 </div>
                                                                 <div class="form-group">
-                                                                    <label for="country">Message/Inquiry &#42;</label>
+                                                                    <label for="country" class="font-sans">Message/Inquiry &#42;</label>
                                                                     <textarea class="form-control" id="message" name="message" cols="40" rows="5" type="text" style=" height: 100px;" required> </textarea>
                                                                 </div>
                                                                 <div class="form-group">
                                                                     <button class="btn btn-sm btn-warning modal-button" type="submit" style="">Submit</button>
                                                                 </div>
                                                                 <div class="form-group">
-                                                                    <label for="mandatory" style="font-size: 7pt; color: blue;"> &#42; <strong>mandatory</strong></label>
+                                                                    <label for="mandatory" class="text-manadatory"> &#42;mandatory</label>
                                                                 </div>
                                                             </div>
                                                         </form>
@@ -249,18 +259,18 @@
                                 </div>
                             </div>
                             <div class="brand-name filter-spesification">
-                                <div class="col-lg-12" style="margin-left: 25%;">
-                                    <div class="form-group row" style="margin-bottom: 0%; ">
-                                        <h4 style="color: black;">RTC</h4>
+                                <div class="col-lg-12 margin-left-20">
+                                    <div class="row no-margin-bottom black">
+                                        <h4>RTC</h4>
                                     </div>
-                                    <div class="form-group row" style="margin-top: 0%;">
-                                        <h4 style="color: black; font-size: 12pt;">Reference Temperature Calibrator</h4>
+                                    <div class="form-group row no-margin-top">
+                                        <h4 class="tab-download-a">Reference Temperature Calibrator</h4>
                                     </div>
                                     <div class="form-group row">
                                         <table class="table table-responsive-sm table-bordered">
                                             <tbody>
-                                                <tr class="spacer " style="border: none;" valign="middle">
-                                                    <th class="align-middle" style="background-color:  #fbb03b; " rowspan="13" valign="middle">RTC 156</th>
+                                                <tr class="spacer no-border" valign="middle">
+                                                    <th class="align-middle lasindo-color" rowspan="13" valign="middle">RTC 156</th>
                                                     <th>Temperature range</th>
                                                     <td>-30 to 155°C / -22 to 311°F</td>
                                                 </tr>
@@ -602,7 +612,7 @@
                                         <table class="table table-responsive-sm table-bordered">
                                             <tbody>
                                                 <tr class="spacer no-border" valign="middle">
-                                                    <th class="align-middle lasindo-color table-lasindo-notitle" rowspan="15" valign="middle"></th>
+                                                    <th class="align-middle lasindo-color " rowspan="15" valign="middle">RTC 700</th>
                                                     <th>Temperature range</th>
                                                     <td>33 to 700°C/91 to 1292°F</td>
                                                 </tr>
@@ -657,18 +667,17 @@
                             <div class="brand-name filter-download">
                                 <div class="col-lg-12 content-lg-space">
                                     
-                                    <div class="form-group row no-margin-bottom">
-                                        <div class="tab-download-label"  ><i class="fas fa-caret-down" style="font-size: 25px;"></i>  Brochur</div>
+                                    <div class="form-group row no-margin-bottom lasindo-color">
+                                        <div class="tab-download-label"> <i class="fas fa-caret-down font-25 margin-left-12 i-download-label" style=""></i> <label class="label-name-position">Brochure</label> </div>
                                     </div>
                                     <div class="form-group row">
-                                        <ul style="list-style-type:none; margin-top: 2%;">
+                                        <ul class="tab-download-ul">
                                             <li><a href="{{ asset('storage/files/Ametek_Calibration_Overview_Brochure.pdf')}}" class="tab-download-a" download><i class="far fa-file-alt"></i> Temperatur Calibrator Overview</li>
                                             <li><a href="{{ asset('storage/files/Temperature_Calibrator_Overview.pdf')}}" class="tab-download-a" download><i class="far fa-file-alt"></i> Ametek Calibrator Overview Brochure</a></li>
                                         </ul> 
                                     </div>
-
-                                    <div class="form-group row" style="margin-bottom: 0%">
-                                        <div class="tab-download-label"><i class="fas fa-caret-down" style="font-size: 25px;"></i>  Datasheet</div>
+                                    <div class="form-group row no-margin-bottom lasindo-color">
+                                        <div class="tab-download-label"><i class="fas fa-caret-down font-25 margin-left-12 i-download-label"></i><label class="label-name-position"> Datasheet</label></div>
                                     </div>
                                     <div class="form-group row">
                                         <ul class="tab-download-ul">
@@ -681,15 +690,15 @@
                                         </ul> 
                                     </div>
 
-                                    <div class="form-group row" style="margin-bottom: 0%">
-                                        <div class="tab-download-label"><i class="fas fa-caret-down" style="font-size: 25px;"></i>  Manual</div>
+                                    <div class="form-group row no-margin-bottom lasindo-color">
+                                        <div class="tab-download-label"><i class="fas fa-caret-down font-25 margin-left-12 i-download-label"></i><label class="label-name-position">Manual</label>  </div>
                                     </div>
                                     <div class="form-group row">
-                                        <ul style="list-style-type:none; margin-top: 2%;">
+                                        <ul class="tab-download-ul">
                                             <li><a href="{{ asset('storage/files/RTC/RTC_User_Manual.pdf')}}" class="tab-download-a" download><i class="far fa-file-alt"></i>  RTC User Manual</a></li>
                                             <li><a href="{{ asset('storage/files/RTC/RTC_Reference_Manual.pdf')}}" class="tab-download-a" download><i class="far fa-file-alt"></i>  RTC Reference Manual</a></li>
                                             <li><a href="{{ asset('storage/files/JOFRACAL_User_Manual.pdf')}}" class="tab-download-a" download><i class="far fa-file-alt"></i>  JofraCal User Manual Temperature</a></li>
-                                            <!--<li><a href="{{ asset('storage/files/DLC_Datasheet.pdf')}}" style="font-size: 15pt; color: black;" download><i class="far fa-file-alt"></i>  DLC User Manual</li>-->
+                                            <li><a href="{{ asset('storage/files/DLC_User_Manual.pdf')}}" class="tab-download-a" download><i class="far fa-file-alt"></i>  DLC User Manual </a></li>
                                             <li><a href="{{ asset('storage/files/Ametrim_User_Manual.pdf')}}" class="tab-download-a" download><i class="far fa-file-alt"></i>  Ametrim User Manual</a></li>
                                         </ul> 
                                     </div>
