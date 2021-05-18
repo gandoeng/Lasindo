@@ -203,7 +203,7 @@
                                                     @elseif($p->abbreviation == 'ETC')
                                                     <div class="d-flex flex-row {{$p->layout=='sidebyside' ? 'image' : ''}} justify-content-center" >
                                                         <a href="{{route('frontend.ETC.ETC','temperature')}}">
-                                                        <div class="temp-img" >
+                                                        <div class="temp-img" style="margin-bottom: 2.7rem;">
                                                             <img src="{{$p->image}}" class="m-auto img-follow" alt="{{$p->name}}" >
                                                         </div>
                                                     </div>
