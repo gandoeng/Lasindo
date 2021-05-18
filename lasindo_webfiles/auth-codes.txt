@@ -1,9 +1,0 @@
-
--- Admin Dashboard --
-email	: best.admin@lasindo.com
-pass	: ppsuu96wj8wp
-
--- MySQL --
-db	: lasindo_db1
-user	: lasindo_dcube
-pass	: N3J2SMTMOap6

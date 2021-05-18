@@ -1,2 +1,0 @@
-# Lasindo
-Lasindo website maintenance
