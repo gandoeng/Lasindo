@@ -34,7 +34,13 @@ class postMail extends Mailable
      * @return $this
      */
     public function build()
-    {
-        return $this->subject('Request Quote')->view('invoice')->with(['data' => $this->data]);
+    {   
+        $count = count($this->data);
+
+        if($count < 2){
+            return $this->subject('Request Quote')->view('invoice2')->with(['data' => $this->data]);
+        } else {
+            return $this->subject('Request Quote')->view('invoice')->with(['data' => $this->data]);
+        }
     }
 }

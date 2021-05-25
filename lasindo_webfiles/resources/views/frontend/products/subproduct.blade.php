@@ -98,24 +98,34 @@
                 
                 <div class="row detail-category">
                     <div class="col-12 category-item">
-                        <div class="cat-name">
-                            <div class="catname">
-                                <h4>{{getSectionFullName()}}</h4>
-                            </div>   
+                        <div class="cat-name-label">
+                            <div class="catname-label">
+                                <h4>{{getSectionFullName()}} Measurement</h4>
+                            </div>
                             <div class="ml-0 mr-0">
-                                <div class="row brands">
-                                    @php
+                                <div class="d-flex brands-label">
+                                    @php 
                                         $count = 0;
                                         foreach ($brandsec as $brs) {
                                             if (Str::slug($brs->section,'-')==getProductSection()) {
                                                 $count = $count+1;
                                                 foreach ($brands->where('name',$brs->brandsec) as $br) {
                                     @endphp
-                                            <div class="col p-2 d-flex cat-brand {{$count==1 ? 'active' : '' }}" data-filter=".filter-{{Str::slug($brs->brandsec,'-')}}">
+                                            @if($count == 1)
+                                            <div class="p-2 d-flex cat-brand-label active">
                                                 <div class="align-self-center m-auto">
-                                                    <img src="{{$br->image}}" alt="{{$count.$brs->section}}-{{$brs->brandsec}}">
+                                                    <a href="{{url('/products/pressure#products-sect')}}">
+                                                    <img src="{{$br->image}}" alt="{{$count.$brs->section}}-{{$brs->brandsec}}" style="width: 100px;"></a>
                                                 </div>
                                             </div>
+                                            @else
+                                            <div class="p-2 d-flex">
+                                                <div class="align-self-center m-auto">
+                                                    <img src="{{$br->image}}" alt="{{$count.$brs->section}}-{{$brs->brandsec}}" style="width: 100px;">
+                                                </div>
+                                            </div>
+                                            @endif
+
                                     @php
                                                 }
                                             }
@@ -123,10 +133,12 @@
                                     @endphp
                                 </div>
                             </div>
-                        </div>
-                        
+                        </div>                        
                         <div id="brand-products">
                             @foreach ($brandsec as $bs)
+
+                            @if($bs->brandsec == 'Ametek | M&G')
+
                                 @if (Str::slug($bs->section,'-')==getProductSection())
                                     @foreach ($brands->where('name',$bs->brandsec) as $brn)
                                         <div class="brand-name filter-{{Str::slug($brn->name,'-')}}">
@@ -138,104 +150,93 @@
                                     @endforeach
 
                                     <div class="row to-be-filtered filter-{{Str::slug($bs->brandsec,'-')}}"> 
-                                        @foreach ($products->where('section',$bs->section)->where('brand',$bs->brandsec) as $p)
-                                            @if ($p->layout=='full')
-                                            <div class="col-md-4">
-                                            @else
+                                        @foreach ($subproduct as $s)
                                             <div class="col-md-4">                                                
-                                            @endif
                                                 <div class="the-products">
-
-
-                                                    @if($p->abbreviation == null)
-                                                        @if($p->name == 'PRESSURE CALIBRATORS')
-                                                            <div class="d-flex {{$p->layout=='sidebyside' ? 'image' : ''}} flow-img-size" >
-                                                                <a href="{{route('frontend.pCalibrators.pCalibrators','pressure')}}" class="d-flex" style="width: 100%;"">
-                                                                <img src="{{$p->image}}" class="m-auto img-follow" alt="{{$p->name}}">
-                                                            </div>
-                                                        @else
-                                                            <div class="d-flex {{$p->layout=='sidebyside' ? 'image' : ''}} flow-img-size" >
-                                                                <img src="{{$p->image}}" class="m-auto img-follow" alt="{{$p->name}}">
-                                                            </div>
-                                                        @endif
-
-                                                    @endif
-                                                    <!--<h4>{{$p->name}}</h4>-->
-                                                    @if($p->fullName == null)
-
-                                                        @if($p->name == 'PRESSURE CALIBRATORS')
-                                                            <div class="title-pro">
-                                                                <a href="{{route('frontend.pCalibrators.pCalibrators','pressure')}}" class="flow-name" style="color: #212529;"><strong> {{$p->name}}</strong></a>
-                                                            </div>
-                                                        @else
-                                                            <p class="flow-name"><strong> {{$p->name}}</strong></p>
-                                                        @endif
-
-                                                    @else
-
                                             
-                                                    @if($p->abbreviation == 'RTC')
-                                                    <div class="d-flex flex-row {{$p->layout=='sidebyside' ? 'image' : ''}} justify-content-center">
-                                                        <a href="{{route('frontend.RTC.RTC','temperature')}}">
+                                                    @if($s->subproduct_abbreviation == 'DWT Type HK')
+
+                                                    <div class="d-flex flex-row sidebyside justify-content-center">
+                                                        <a href="{{route('frontend.HK.HK','pressure')}}">
                                                         <div class="temp-img" style="margin-left: 25%;">
-                                                            <img src="{{$p->image}}" class="m-auto img-follow" alt="{{$p->name}}"></a>
+                                                            <img src="{{$s->subproduct_images}}" class="m-auto img-follow" alt="{{$s->subproduct_name}}"></a>
                                                         </div>
                                                     </div>
                                                     <div class="title-temp">
-                                                        <a href="{{route('frontend.RTC.RTC','temperature')}}" class=" flow-title">{{$p->abbreviation}}</a>
+                                                        <a href="{{route('frontend.HK.HK','pressure')}}" class=" flow-title">{{$s->subproduct_abbreviation}}</a>
                                                     </div>
-                                                    <p class="index-title-a" style=""> {{$p->fullName}}</p>
+                                                    <p class="index-title-a" style=""> {{$s->subproduct_name}}</p>
 
-                                                    @elseif($p->abbreviation == 'PTC')
-                                                    <div class="d-flex flex-row {{$p->layout=='sidebyside' ? 'image' : ''}} justify-content-center" >
-                                                        <a href="{{route('frontend.PTC.PTC','temperature')}}">
+                                                    @elseif($s->subproduct_abbreviation == 'DWT Type HL')
+                                                    <div class="d-flex flex-row sidebyside justify-content-center">
+                                                        <a href="{{route('frontend.HL.HL','pressure')}}">
+                                                        <div class="temp-img" style="margin-bottom: 12px !important;">
+                                                            <img src="{{$s->subproduct_images}}" class="m-auto img-follow" alt="{{$s->subproduct_name}}"></a>
+                                                        </div>
+                                                    </div>
+                                                    <div class="title-temp">
+                                                        <a href="{{route('frontend.HL.HL','pressure')}}" class=" flow-title">{{$s->subproduct_abbreviation}}</a>
+                                                    </div>
+                                                    <p class="index-title-a" style=""> {{$s->subproduct_name}}</p>
+                                                    @elseif($s->subproduct_abbreviation == 'DWT type PK II')
+                                                    <div class="d-flex flex-row sidebyside justify-content-center">
+                                                        <a href="{{route('frontend.PK2.PK2','pressure')}}">
+                                                        <div class="temp-img" style="margin-bottom: 60px;">
+                                                            <img src="{{$s->subproduct_images}}" class="m-auto img-follow" alt="{{$s->subproduct_name}}"></a>
+                                                        </div>
+                                                    </div>
+                                                    <div class="title-temp">
+                                                        <a href="{{route('frontend.PK2.PK2','pressure')}}" class=" flow-title">{{$s->subproduct_abbreviation}}</a>
+                                                    </div>
+                                                    <p class="index-title-a" style=""> {{$s->subproduct_name}}</p>
+
+                                                    @elseif($s->subproduct_abbreviation == 'DWT Type RK')
+                                                    <div class="d-flex flex-row sidebyside justify-content-center">
+                                                        <a href="{{route('frontend.RK.RK','pressure')}}">
+                                                        <div class="temp-img" style="margin-bottom: 60px;">
+                                                            <img src="{{$s->subproduct_images}}" class="m-auto img-follow" alt="{{$s->subproduct_name}}"></a>
+                                                        </div>
+                                                    </div>
+                                                    <div class="title-temp">
+                                                        <a href="{{route('frontend.RK.RK','pressure')}}" class=" flow-title">{{$s->subproduct_abbreviation}}</a>
+                                                    </div>
+                                                    <p class="index-title-a" style=""> {{$s->subproduct_name}}</p>
+
+                                                    @elseif($s->subproduct_abbreviation == 'Type T')
+                                                    <div class="d-flex flex-row sidebyside justify-content-center">
+                                                        <a href="{{route('frontend.T.T','pressure')}}">
                                                         <div class="temp-img" style="margin-left: 25%;">
-                                                            <img src="{{$p->image}}" class="m-auto img-follow" alt="{{$p->name}}"></a>
+                                                            <img src="{{$s->subproduct_images}}" class="m-auto img-follow" alt="{{$s->subproduct_name}}"></a>
                                                         </div>
                                                     </div>
                                                     <div class="title-temp">
-                                                        <a href="{{route('frontend.PTC.PTC','temperature')}}" class=" flow-title">{{$p->abbreviation}}</a>
+                                                        <a href="{{route('frontend.T.T','pressure')}}" class=" flow-title">{{$s->subproduct_abbreviation}}</a>
                                                     </div>
-                                                    <p  class="index-title-a"> {{$p->fullName}}</p>
+                                                    <p class="index-title-a" style=""> {{$s->subproduct_name}}</p>
 
-                                                    @elseif($p->abbreviation == 'CTC')
-                                                    <div class="d-flex flex-row{{$p->layout=='sidebyside' ? 'image' : ''}} justify-content-center" >
-                                                        <a href="{{route('frontend.CTC.CTC','temperature')}}">
+                                                    @elseif($s->subproduct_abbreviation == 'T-600')
+                                                    <div class="d-flex flex-row sidebyside justify-content-center">
+                                                        <a href="{{route('frontend.T600.T600','pressure')}}">
                                                         <div class="temp-img" style="margin-left: 25%;">
-                                                            <img src="{{$p->image}}" class=" m-auto img-follow" alt="{{$p->name}}"></a>
+                                                            <img src="{{$s->subproduct_images}}" class="m-auto img-follow" alt="{{$s->subproduct_name}}"></a>
                                                         </div>
                                                     </div>
                                                     <div class="title-temp">
-                                                        <a href="{{route('frontend.CTC.CTC','temperature')}}" class=" flow-title">{{$p->abbreviation}}</a>
+                                                        <a href="{{route('frontend.T600.T600','pressure')}}" class=" flow-title">{{$s->subproduct_abbreviation}}</a>
                                                     </div>
-                                                    <p class="index-title-a"> {{$p->fullName}}</p>
+                                                    <p class="index-title-a" style=""> {{$s->subproduct_name}}</p>
 
-                                                    @elseif($p->abbreviation == 'MTC')
-                                                    <div class="d-flex flex-row {{$p->layout=='sidebyside' ? 'image' : ''}} justify-content-center"  >
-                                                        <a href="{{route('frontend.MTC.MTC','temperature')}}">
-                                                        <div class="temp-img" >
-                                                            <img src="{{$p->image}}" class=" m-auto img-follow" alt="{{$p->name}}" style="max-height: 200px;">
+                                                    @elseif($s->subproduct_abbreviation == 'T-900')
+                                                    <div class="d-flex flex-row sidebyside justify-content-center">
+                                                        <a href="{{route('frontend.T900.T900','pressure')}}">
+                                                        <div class="temp-img" style="margin-left: 25%;">
+                                                            <img src="{{$s->subproduct_images}}" class="m-auto img-follow" alt="{{$s->subproduct_name}}"></a>
                                                         </div>
                                                     </div>
                                                     <div class="title-temp">
-                                                        <a href="{{route('frontend.MTC.MTC','temperature')}}" class=" flow-title">{{$p->abbreviation}}</a>
+                                                        <a href="{{route('frontend.T900.T900','pressure')}}" class=" flow-title">{{$s->subproduct_abbreviation}}</a>
                                                     </div>
-                                                    <p class="index-title-a"> {{$p->fullName}}</p>
-
-                                                    @elseif($p->abbreviation == 'ETC')
-                                                    <div class="d-flex flex-row {{$p->layout=='sidebyside' ? 'image' : ''}} justify-content-center" >
-                                                        <a href="{{route('frontend.ETC.ETC','temperature')}}">
-                                                        <div class="temp-img" >
-                                                            <img src="{{$p->image}}" class="m-auto img-follow" alt="{{$p->name}}" style="margin-bottom: 2.7rem !important;">
-                                                        </div>
-                                                    </div>
-                                                    <div class="title-temp">
-                                                        <a href="{{route('frontend.ETC.ETC','temperature')}}"class=" flow-title">{{$p->abbreviation}}</a>
-                                                    </div>
-                                                    <p class="index-title-a"> {{$p->fullName}}</p>
-                                                    @else
-                                                    <a href="#" class="index-title-a"> {{$p->fullName}}</a>
-                                                    @endif
+                                                    <p class="index-title-a" style=""> {{$s->subproduct_name}}</p>
 
                                                     @endif
                                                 </div>
@@ -299,15 +300,12 @@
                                                         </div>
                                                         </div>
                                                         </div>
-                                                    <!--
-                                                    <div class="desc">
-                                                        {!!$p->desc!!}
-                                                    </div>
-                                                -->
+                                                  
                                                 </div>
                                         @endforeach
                                     </div>
                                 @endif
+                            @endif
                             @endforeach
 
                         </div>

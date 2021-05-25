@@ -8,6 +8,10 @@ use App\Models\Backend\Contacts;
 use App\Models\Backend\Countries;
 use Illuminate\Http\Request;
 use Yoeunes\Toastr\ToastrServiceProvider;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Mail;
+use App\Mail\postMail;
+
 
 class ContactController extends Controller
 {
@@ -37,6 +41,21 @@ class ContactController extends Controller
             'email'     => $req->email,
             'message'   => $req->message,
         ]);
+
+        //email
+
+        $data = [
+            'firstName' =>  $req->fname,
+            'lastName'  =>  $req->fname,
+            'company'   =>  $req->fname,
+            'country'   =>  $req->fname,
+            'phone'     =>  $req->fname,
+            'email'     =>  $req->fname,
+            'messages'  =>  $req->fname
+        ];
+
+        $email = DB::table('settings')->where('set_key','=','inquiry_email')->value('value');
+        Mail::to($email)->send(new \App\Mail\postMail($data));
 
         toastr()->success('Thank you! <br> Your message has been submitted.');
         return redirect()->route('frontend.contact');

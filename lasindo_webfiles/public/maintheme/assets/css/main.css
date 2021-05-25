@@ -652,10 +652,11 @@ body {
 .button-flow-lasindo {
   background-color: #fbb03b;
   color: white;
-  margin-left: auto;
-  margin-right: auto;
-  display: block;
-}
+  width: 150px;
+  height: 30px;
+  float: left;
+  margin-left: 90px;
+  margin-top: 22px; }
 
 .modal-title-style {
   color: #d3d3d3;
@@ -728,7 +729,15 @@ body {
   font-size: 12pt; }
 
 .index-title-a {
+  margin-bottom: 0;
+  float: left;
+  margin-left: 0%;
   text-align: center;
+  font-size: 12pt;
+  width: 100%;
+  font-size: 12pt;
+  height: 20px;
+  color: black;
   font-family: sans-serif; }
 
 .font-sans {
@@ -766,18 +775,24 @@ td {
   font-weight: lighter; }
 
 .flow-img-size {
-  height: 150px; 
-  align-items: center;
-}
+  width: 400px;
+  height: 150px; }
 
 .img-follow {
   max-width: 100%;
   max-height: 100%;
-}
+  float: left;
+  margin-left: 100%; }
 
 .flow-name {
-  text-align: center; 
-}
+  margin-top: 7px;
+  margin-bottom: 0;
+  float: left;
+  font-size: 12pt;
+  width: 100%;
+  font-size: 12pt;
+  height: 20px;
+  text-align: center; }
 
 .flow-abbreviation {
   float: left;
@@ -845,10 +860,7 @@ td {
 
 .flow-title {
   color: black;
-  font-size: 18pt; 
-  display: block;
-  text-align: center;
-}
+  font-size: 18pt; }
 
 .margin-left-title a {
   margin-left: 20px; }
@@ -867,8 +879,52 @@ td {
   margin-bottom: 7px;
   float: right; }
 
-.temp-img{
+.temp-img {
   max-width: 200px;
   max-height: 200px; }
+
+.email-search {
+  width: auto; }
+
+@media (max-width: 768px) {
+  .content-space {
+    margin: auto; }
+
+  .image-overview {
+    margin-left: auto;
+    margin: 25px; }
+
+  .content-lg-space {
+    margin: auto; }
+
+  .no-margin-bottom {
+    margin-bottom: auto; }
+
+  .tab-download-label {
+    padding-right: 0px; }
+
+  .tab-video-center {
+    margin-left: auto; }
+
+  .content-space2 {
+    margin-left: auto;
+    margin-right: auto; }
+
+  .margin-left-20 {
+    margin-left: auto; }
+
+  .filter-overview, .filter-spesification, .filter-download, .filter-video {
+    position: relative !important;
+    top: auto !important; } }
+.title-pro {
+  text-align: center;
+  margin-bottom: 1rem; }
+
+.title-temp {
+  text-align: center; }
+
+.wa-ps {
+  margin-top: 10px;
+  width: 100%; }
 
 /*# sourceMappingURL=main.css.map */

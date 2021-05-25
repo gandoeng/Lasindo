@@ -114,14 +114,14 @@
                                             @if($count == 1)
                                             <div class="p-2 d-flex cat-brand-label active">
                                                 <div class="align-self-center m-auto">
-                                                    <a href="{{url('/products/temperature#products-sect')}}">
-                                                    <img src="{{$br->image}}" alt="{{$count.$brs->section}}-{{$brs->brandsec}}"></a>
+                                                    <a href="{{url('/products/pressure#products-sect')}}">
+                                                    <img src="{{$br->image}}" alt="{{$count.$brs->section}}-{{$brs->brandsec}}" style="width: 100px;"></a>
                                                 </div>
                                             </div>
                                             @else
                                             <div class="p-2 d-flex">
                                                 <div class="align-self-center m-auto">
-                                                    <img src="{{$br->image}}" alt="{{$count.$brs->section}}-{{$brs->brandsec}}">
+                                                    <img src="{{$br->image}}" alt="{{$count.$brs->section}}-{{$brs->brandsec}}" style="width: 100px;">
                                                 </div>
                                             </div>
                                             @endif
@@ -136,7 +136,7 @@
                         </div>
                         <div class="form-group">
                             <div class="brand-name">
-                                <h4 class="brand-black">Ametek | Jofra</h4>
+                                <h4 class="brand-black">Ametek | M&G</h4>
                             </div>
                         </div>
                             <div class="cat-name">
@@ -171,25 +171,29 @@
                         <div id="brand-products">
                             <div class="content-space to-be-filtered filter-overview ">
                                 <div class="col-lg-6">
-                                    @foreach($pImage as $p)
-                                    <div class="card image-overview" >
-                                        <img  src="{{ asset($p->value)}}">
+                                    @foreach($subproduct as $s)
+                                    <div class="card image-overview" style="margin-top: 20%;">
+                                        @if($s->subproduct_abbreviation == "Type T")
+                                        <img  src="{{ asset($s->subproduct_images)}}" style="    height: 300px; width: 100px;margin-left: 25%;">
+                                        @else
+                                        <img  src="{{ asset($s->subproduct_images)}}">
+                                        @endif
                                     </div>
                                     @endforeach
                                 </div>
                                 <div class="col-lg-6">
-                                    @foreach($products as $p)
+                                    @foreach($subproduct as $s)
                                     <div class="form-group row no-margin-bottom">
-                                        <h4 class="black" >{{$p->abbreviation}}</h4>
+                                        <h4 class="black" >{{$s->subproduct_abbreviation}}</h4>
                                     </div>
                                     <div class="form-group row no-margin-top" >
-                                        <h4 class="title-overview">{{$p->fullName}}</h4>
+                                        <h4 class="title-overview">{{$s->subproduct_name}}</h4>
                                     </div>
                                     @endforeach
                                     <div class="form-group row">
                                         <ul class="text-style">
                                             @foreach($overview as $o)
-                                            <li><p>{{$o->value}}</p></li>
+                                            <li><p><?= str_replace('"', "",$o->value)?></p></li>
                                             @endforeach
                                         </ul>
                                     </div>
@@ -258,56 +262,26 @@
                             <div class="brand-name filter-spesification">
                                 
                                 <div class="col-lg-12 margin-left-20">
-                                    @foreach($products as $p)
+                                    @foreach($subproduct as $s)
                                     <div class="row no-margin-bottom black">
-                                        <h4>{{$p->abbreviation}}</h4>
+                                        <h4>{{$s->subproduct_abbreviation}}</h4>
                                     </div>
                                     <div class="form-group row no-margin-top">
-                                        <h4 class="tab-download-a">{{$p->fullName}}</h4>
+                                        <h4 class="tab-download-a">{{$s->subproduct_name}}</h4>
                                     </div>
                                     @endforeach
-                                    @foreach($spec as $d)
                                     <div class="form-group row">
                                         <table class="table table-responsive-sm table-bordered">
                                             <tbody>
+                                                @foreach($spec as $s)
                                                 <tr class="spacer no-border" valign="middle">
-                                                    <th class="align-middle lasindo-color" valign="middle" rowspan="18" style="width: 100px;">{{$d->product_name}} {{$d->product_code}}</th>
-                                                    <th class="table-spec-size">Temperature range</th>
-                                                    <td class="coloumn-table-spec">{{$d ->temperature}}</td>   
+                                                    <th class="table-spec-size">{{$s->label}}</th>
+                                                    <td class="coloumn-table-spec">{{$s->value}}</td> 
                                                 </tr>
-                                                <tr>
-                                                    <th class="table-spec-size">Accuracy</th>
-                                                    <td class="coloumn-table-spec"><?= str_replace('"', ' ',$d->accuracy)?></td>   
-                                                </tr>
-                                                <tr>
-                                                    <th class="table-spec-size">Stability</th>
-                                                    <td class="coloumn-table-spec">{{$d ->stability}}</td>   
-                                                </tr>
-                                                <tr>
-                                                    <th class="table-spec-size">Resolution (user-selectable)</th>
-                                                    <td class="coloumn-table-spec">{{$d ->resolution}}</td>   
-                                                </tr>
-                                                <tr>
-                                                    <th class="table-spec-size">Heating time</th>
-                                                    <td class="coloumn-table-spec"><?= str_replace('"', ' ',$d->heating)?></td>   
-                                                </tr>
-                                                <tr>
-                                                    <th class="table-spec-size">Cooling time</th>
-                                                    <td class="coloumn-table-spec"><?= str_replace('"', ' ',$d->cooling)?></td>   
-                                                </tr>
-                                                <tr>
-                                                    <th class="table-spec-size">Time to stability</th>
-                                                    <td class="coloumn-table-spec">{{$d ->timeStability}}</td>   
-                                                </tr>
-                                                <tr>
-                                                    <th class="table-spec-size">Immersion Depth</th>
-                                                    <td class="coloumn-table-spec"><?= str_replace('"', ' ',$d->immersion)?></td>   
-                                                </tr>
-
+                                                @endforeach
                                             </tbody>
                                         </table>
                                     </div>
-                                    @endforeach
                                 </div>
                             </div>
                             <div class="brand-name filter-download">
@@ -340,9 +314,6 @@
                                     <div class="form-group row">
                                         <ul class="tab-download-ul">
                                             @foreach($manualProduct as $m)
-                                            <li><a href="{{ asset($m->value)}}" class="tab-download-a" download><i class="far fa-file-alt"></i>  {{$m->file_desc}}</a></li>
-                                            @endforeach
-                                            @foreach($manual as $m)
                                             <li><a href="{{ asset($m->value)}}" class="tab-download-a" download><i class="far fa-file-alt"></i>  {{$m->file_desc}}</a></li>
                                             @endforeach
                                         </ul> 

@@ -37,7 +37,7 @@
                 
                 <div class="row detail-category">
                     <div class="col-12 category-item">
-                        <div class="cat-name special">
+                        <div class="cat-name special" style="padding: 0;">
                             <div class="catname">
                                 <h4>{{$epcname[0]->name}}</h4>
                             </div> 

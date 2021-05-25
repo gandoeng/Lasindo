@@ -7,7 +7,6 @@
 <script src="{{ url('maintheme/assets/js/wow.min.js') }}"></script>
 <script src="{{ url('maintheme/assets/js/main.js') }}"></script>
 
-
 <script type="text/javascript">
 	function truncateText(selector, maxLength) {
     var element = document.querySelector(selector),

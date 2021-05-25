@@ -38,7 +38,9 @@
                 <div class="about-content">
                     <div class="row">
                         <div class="col-md-7">
-                            <div class="desc">{!!$desc[0]->about_main!!}</div>
+                            @foreach($desc as $d)
+                            <div class="desc"><?= str_replace('"', ' ',$d -> about_main)?></div>
+                            @endforeach
                         </div>
                         <div class="col-md-5">
                             <div id="about-photos" class="border-grey ml-0 mr-0">
@@ -74,7 +76,7 @@
                         <div class="col-md-3">
                             <div class="about-image">
                                 <div class="overlay">
-                                    <img src="{{url('maintheme/assets/img/icons/iso.png')}}" class="w-100" alt="Lasindo Jayabersama ISO">
+                                    <img src="{{url('maintheme/assets/img/icons/iso.jpg')}}" class="w-100" alt="Lasindo Jayabersama ISO">
                                 </div>
                             </div>
                         </div>

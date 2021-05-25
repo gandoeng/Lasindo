@@ -1043,3 +1043,63 @@ td{
   max-width: 200px;
   max-height: 200px;
 }
+
+
+.email-search{
+  width: auto;
+}
+
+@media (max-width: 768px){
+  .content-space{
+    margin: auto;
+  }
+
+  .image-overview{
+    margin-left: auto;
+    margin: 25px;
+  }
+
+  .content-lg-space{
+    margin: auto;
+  }
+
+  .no-margin-bottom{
+    margin-bottom: auto;
+  }
+
+  .tab-download-label{
+    padding-right: 0px;
+  }
+
+  .tab-video-center{
+    margin-left: auto;
+  }
+
+  .content-space2{
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .margin-left-20{
+    margin-left: auto;
+  }
+
+  .filter-overview, .filter-spesification, .filter-download, .filter-video{
+    position: relative !important;
+    top: auto !important;
+  }
+}
+
+.title-pro{
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+.title-temp{
+    text-align: center;
+}
+
+.wa-ps{
+    margin-top: 10px;
+    width: 100%;
+}

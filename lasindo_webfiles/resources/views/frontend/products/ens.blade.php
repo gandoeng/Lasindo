@@ -101,17 +101,17 @@
                                             {!!$brn->desc!!}
                                         </div>
                                     @endforeach
-                                    <div class=" to-be-filtered filter-{{Str::slug($bs->brandsec,'-')}}"> 
+                                    <div class=" to-be-filtered filter-{{Str::slug($bs->brandsec,'-')}} row"> 
                                         @foreach ($products->where('section',$bs->section)->where('brand',$bs->brandsec) as $p)
                                             @if ($p->layout=='full')
-                                            <div class="col-12">
+                                            <div class="col-6">
                                             @else
                                             <div class="col-md-6">                                                
                                             @endif
                                                 <div class="the-products">
                                                     <h4>{{$p->name}}</h4>
-                                                    <div class="d-flex {{$p->layout=='sidebyside' ? 'image' : ''}}" style="height: 400px; width: 400px;">
-                                                        <img src="{{$p->image}}" class="m-auto" alt="{{$p->name}}" style="height: 100%; width: 100%;">
+                                                    <div class="d-flex {{$p->layout=='sidebyside' ? 'image' : ''}}" >
+                                                        <img src="{{$p->image}}" alt="{{$p->name}}" style="max-height:100%; max-width:100%;">
                                                     </div>
                                                     <div class="desc">
                                                         {!!$p->desc!!}

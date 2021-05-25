@@ -13,33 +13,31 @@
                     </ul>
                 </div>
                 <div class="col-md-6 d-flex">                  
-                    <div class="align-self-top ml-auto">
-                        <h4 class="text-left">REQUEST QUOTE</h4>  
-                        <div class="row">
-                            <div class="col-md-6">
-                                <div class="form-group">
-                                    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="EMAIL ADDRESS" style="width: 190%;">
-                                </div>    
+                    <div class="align-self-top">
+                        <form action="{{ route('frontend.request-quote') }}" method="post" enctype="multipart/form-data">
+                        @csrf
+                            <h4 class="text-left">REQUEST QUOTE</h4>  
+                            <div class="row">
+                                <div class="col-lg-9 col-md-9">
+                                    <div class="form-group">
+                                        <input type="email" class="form-control email-search" id="email" name="email" aria-describedby="emailHelp" placeholder="EMAIL ADDRESS" style="width: 100%;">
+                                    </div>    
+                                </div>
+                                <div class="col-lg-3 col-md-3">                                        
+                                    <button class="btn btn-pill btn-warning" type="submit" style="color: white; background-color:  #fbb03b;">Submit</button>
+                                </div>
                             </div>
-                            <div class="col-md-6">
-                                <div class="form-group row">
-                                    <form action="#" method="get" enctype="multipart/form-data">
-                                    <button class="btn btn-pill btn-warning" type="submit" style="margin-left: 130%; color: white; background-color:  #fbb03b;">Submit</button>
-                                    </form>
+                        </form>
+                        <div class="wa-ps">
+                            <div class="row">
+                                <div id="icons" class="col-2">
+                                    <a href="{{$footer[0]->wa}}" target="_blank"><img src="{{ url('maintheme/assets/img/icons/ic_wa_ori.png') }}" alt="Facebook icon"></a>
+                                </div>
+                                <div class="col-10" style="padding: 0;">
+                                    <p>+62 811-8018-877</p>
                                 </div>
                             </div>
                         </div>
-                        <ul class="sosmeds">
-                            <li id="icons">
-                                <a href="{{$footer[0]->fb}}" target="_blank"><img src="{{ url('maintheme/assets/img/icons/fb.png') }}" alt="Facebook icon"></a>
-                            </li>
-                            <li id="icons">
-                                <a href="{{$footer[0]->in}}" target="_blank"><img src="{{ url('maintheme/assets/img/icons/in.png') }}" alt="LinkedIn icon"></a>
-                            </li>
-                            <li id="icons">
-                                <a href="{{$footer[0]->tw}}" target="_blank"><img src="{{ url('maintheme/assets/img/icons/tw.png') }}" alt="Twitter icon"></a>
-                            </li>
-                        </ul>
                     </div>
                 </div>
             </div>

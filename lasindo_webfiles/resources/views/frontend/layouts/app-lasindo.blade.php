@@ -2,7 +2,7 @@
     <head>
         @include('frontend.includes.las-metastyles')
     </head>
-    <body>
+    <body >
         @include('frontend.includes.las-nav')
         @yield('content')
     
